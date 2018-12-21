@@ -5,6 +5,9 @@ const DIST_DIR = path.join(__dirname, '/client/dist');
 
 
 module.exports = {
+  resolve: {
+    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx'],
+  },
   entry: `${SRC_DIR}/index.jsx`,
   output: {
     filename: 'bundle.js',

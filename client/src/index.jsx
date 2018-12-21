@@ -1,5 +1,8 @@
 /* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Price from './components/Price';
 
-ReactDOM.render(<h1>Hello World</h1>, document.getElementById('app'));
+console.log(window.location.href);
+
+ReactDOM.render(<Price data={window.location.href} />, document.getElementById('app'));

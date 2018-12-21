@@ -17,7 +17,7 @@ app.use(morgan('tiny'));
 app.use(bodyparser.json());
 app.use(express.static('client/dist'));
 
-app.get('/rooms/:id', (req, res) => {
+app.get('/api/rooms/:id', (req, res) => {
   const { id } = req.params;
   Reservations.findOne({ _id: id })
     .then((result) => {
