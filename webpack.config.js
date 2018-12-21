@@ -11,13 +11,14 @@ module.exports = {
     path: DIST_DIR,
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?/,
         include: SRC_DIR,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-react', '@babel/preset-env', '@babel/plugin-proposal-class-properties'],
+          presets: ['@babel/preset-react', '@babel/preset-env'],
+          plugins: ['transform-class-properties'],
         },
       },
     ],
