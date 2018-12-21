@@ -3,12 +3,22 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Price from './Price';
 
-const App = () => (
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-  <Route
-    path="/rooms/:id"
-    render={({ match }) => <Price roomId={match.params.id} />}
-  />
-);
+    this.state = {};
+  }
+
+
+  render() {
+    return (
+      <Route
+        path="/rooms/:id"
+        render={({ match }) => <Price roomId={match.params.id} />}
+      />
+    );
+  }
+};
 
 export default App;
