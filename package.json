@@ -9,10 +9,14 @@
   },
   "scripts": {
     "seed": "node ./db/utils/seedDB.js",
-    "react-dev": "webpack -w -d"
+    "react-dev": "webpack -w -d",
+    "start": "nodemon ./server/server.js"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
     "mongoose": "^5.4.0",
+    "morgan": "^1.9.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
