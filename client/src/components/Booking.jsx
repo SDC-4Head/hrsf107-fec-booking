@@ -28,6 +28,7 @@ class Booking extends React.Component {
     return (
       <div>
         <Price price={price} />
+        <hr />
       </div>
     );
   }
