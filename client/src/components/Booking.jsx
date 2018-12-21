@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import Price from './Price';
 import DatePicker from './DatePicker';
+import Rating from './Rating';
 
 class Booking extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Booking extends React.Component {
     const { roomId } = this.props;
     this.state = {
       roomId,
+      stars: null,
       price: null,
     };
   }
@@ -19,16 +21,17 @@ class Booking extends React.Component {
     const { roomId } = this.state;
     axios.get(`/api/rooms/${roomId}`)
       .then(({ data }) => {
-        const { price } = data;
-        this.setState({ price });
+        const { price, stars } = data;
+        this.setState({ price, stars });
       });
   }
 
   render() {
-    const { price } = this.state;
+    const { price, stars } = this.state;
     return (
       <div>
         <Price price={price} />
+        <Rating stars={stars} />
         <hr />
         <DatePicker />
       </div>
