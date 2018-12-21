@@ -1,24 +1,14 @@
 /* eslint-env browser */
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Price from './Price';
+import Booking from './Booking';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+const App = () => (
 
-    this.state = {};
-  }
-
-
-  render() {
-    return (
-      <Route
-        path="/rooms/:id"
-        render={({ match }) => <Price roomId={match.params.id} />}
-      />
-    );
-  }
-};
+  <Route
+    path="/rooms/:id"
+    render={({ match }) => <Booking roomId={match.params.id} />}
+  />
+);
 
 export default App;
