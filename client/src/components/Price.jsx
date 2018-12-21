@@ -2,10 +2,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Price = ({ roomId }) => <div>{roomId}</div>;
+const Price = ({ price }) => {
+  if (price) {
+    return (
+      <div className="price">
+        {`The price is ${price}`}
+      </div>
+    );
+  }
+  return <div>Loading...</div>
+};
+
+Price.defaultProps = {
+  price: null,
+};
 
 Price.propTypes = {
-  roomId: PropTypes.string.isRequired,
+  price: PropTypes.number,
 };
 
 export default Price;

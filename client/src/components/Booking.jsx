@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import Price from './Price';
 
 class Booking extends React.Component {
@@ -7,14 +8,26 @@ class Booking extends React.Component {
     super(props);
 
     const { roomId } = this.props;
-    this.state = { roomId };
+    this.state = {
+      roomId,
+      price: null,
+    };
+  }
+
+  componentDidMount() {
+    const { roomId } = this.state;
+    axios.get(`/api/rooms/${roomId}`)
+      .then(({ data }) => {
+        const { price } = data;
+        this.setState({ price });
+      });
   }
 
   render() {
-    const { roomId } = this.state;
+    const { price } = this.state;
     return (
       <div>
-        <Price roomId={roomId} />
+        <Price price={price} />
       </div>
     );
   }
