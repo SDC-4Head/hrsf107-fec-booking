@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 const Reservations = require('../db/models/reservations.js');
 
 mongoose.connect('mongodb://localhost/errbnb', { useNewUrlParser: true })
@@ -23,6 +24,10 @@ app.get('/api/rooms/:id', (req, res) => {
     .then((result) => {
       res.send(result);
     });
+});
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../client/dist/index.html'));
 });
 
 app.listen(PORT, () => {

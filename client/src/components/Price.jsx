@@ -1,10 +1,11 @@
+/* eslint-env browser */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Price = ({ data }) => <div>{ data }</div>;
+const Price = ({ roomId }) => <div>{roomId}</div>;
 
 Price.propTypes = {
-  data: PropTypes.string.isRequired,
+  roomId: PropTypes.string.isRequired,
 };
 
 export default Price;

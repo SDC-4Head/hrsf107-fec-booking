@@ -1,8 +1,14 @@
 /* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Price from './components/Price';
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/App';
 
-console.log(window.location.href);
+const container = document.getElementById('app');
 
-ReactDOM.render(<Price data={window.location.href} />, document.getElementById('app'));
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  container,
+);
