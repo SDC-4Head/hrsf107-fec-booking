@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "seed": "node ./db/utils/seedDB.js",
+    "seed": "node ./db/utils/seedDB.js & exit",
     "react-dev": "webpack -w -d",
     "start": "nodemon ./server/server.js"
   },
