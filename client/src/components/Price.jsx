@@ -10,7 +10,7 @@ const Price = ({ price }) => {
       </div>
     );
   }
-  return <div>Loading...</div>
+  return <div>Loading...</div>;
 };
 
 Price.defaultProps = {
