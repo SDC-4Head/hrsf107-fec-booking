@@ -4,6 +4,7 @@ import axios from 'axios';
 import Price from './Price';
 import DatePicker from './DatePicker';
 import Rating from './Rating';
+import GuestPicker from './GuestPicker';
 
 class Booking extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class Booking extends React.Component {
         <Rating stars={stars} />
         <hr />
         <DatePicker />
+        <GuestPicker />
       </div>
     );
   }
