@@ -4,7 +4,7 @@ import axios from 'axios';
 import Price from './Price';
 import DatePicker from './DatePicker';
 import Rating from './Rating';
-import GuestPicker from './GuestPicker';
+import GuestPicker from './GuestBar/GuestPicker';
 
 class Booking extends React.Component {
   constructor(props) {
@@ -30,12 +30,15 @@ class Booking extends React.Component {
   render() {
     const { price, stars } = this.state;
     return (
-      <div>
+      <div id="booking-bar">
         <Price price={price} />
         <Rating stars={stars} />
         <hr />
         <DatePicker />
         <GuestPicker />
+        <div>
+          <input type="submit" value="Request to Book" />
+        </div>
       </div>
     );
   }
