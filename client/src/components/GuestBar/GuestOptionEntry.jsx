@@ -2,7 +2,7 @@ import React from 'react';
 
 const GuestOptionEntry = () => (
   <div>
-    <h1>Guest Entry</h1>
+    <p>Guest Entry</p>
   </div>
 );
 

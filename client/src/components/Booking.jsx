@@ -4,7 +4,7 @@ import axios from 'axios';
 import Price from './Price';
 import DatePicker from './DatePicker';
 import Rating from './Rating';
-import GuestPicker from './GuestBar/GuestPicker';
+import GuestSelector from './GuestBar/GuestSelector';
 
 class Booking extends React.Component {
   constructor(props) {
@@ -15,7 +15,10 @@ class Booking extends React.Component {
       roomId,
       stars: null,
       price: null,
+      isGuestBarClicked: false,
     };
+
+    this.handleGuestBarClick = this.handleGuestBarClick.bind(this);
   }
 
   componentDidMount() {
@@ -27,15 +30,20 @@ class Booking extends React.Component {
       });
   }
 
+  handleGuestBarClick() {
+    const { isGuestBarClicked } = this.state;
+    this.setState({ isGuestBarClicked: !isGuestBarClicked });
+  }
+
   render() {
-    const { price, stars } = this.state;
+    const { price, stars, isGuestBarClicked } = this.state;
     return (
       <div id="booking-bar">
         <Price price={price} />
         <Rating stars={stars} />
         <hr />
         <DatePicker />
-        <GuestPicker />
+        <GuestSelector isClicked={isGuestBarClicked} handleClick={this.handleGuestBarClick} />
         <div>
           <input type="submit" value="Request to Book" />
         </div>
