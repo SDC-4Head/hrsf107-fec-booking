@@ -17,8 +17,7 @@ const getNumberOfDaysInMonth = (month, year) => {
   return (nextMonth - initialMonth) / MILLISECONDS_IN_DAY;
 };
 
-const padCalendar = (firstDayInMonth, lastDayInMonth ,calendar) => {
-
+const padCalendar = (firstDayInMonth, lastDayInMonth, calendar) => {
   for (let i = 0; i < firstDayInMonth; i += 1) {
     calendar.unshift(null);
   }
@@ -41,7 +40,7 @@ const formatCalendar = (calendar) => {
     }
   }
   return formattedCalendar;
-}
+};
 
 const generateCalendarState = (month, year) => {
   const firstDayIndex = getFirstDayInMonth(month, year);
