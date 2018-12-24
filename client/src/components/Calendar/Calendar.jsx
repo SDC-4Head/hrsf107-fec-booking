@@ -29,17 +29,22 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const { monthState } = this.state;
+    const { monthState, currentMonth } = this.state;
     const calendar = monthState.map((week, weekIndex) => (
       <tr>
         {week.map((day, dayIndex) => <Day day={monthState[weekIndex][dayIndex]} />) }
       </tr>
     ));
-    return (
-      <table>
-        {calendar}
-      </table>
 
+    return (
+      <div>
+        <p>{currentMonth}</p>
+        <table>
+          <tbody>
+            {calendar}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }

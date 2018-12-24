@@ -7,8 +7,12 @@ const Day = ({ day }) => (
   </td>
 );
 
+Day.defaultProps = {
+  day: null,
+};
+
 Day.propTypes = {
-  day: PropTypes.number.isRequired,
+  day: PropTypes.number,
 };
 
 export default Day;
