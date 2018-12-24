@@ -6,7 +6,8 @@ const Price = ({ price }) => {
   if (price) {
     return (
       <div className="price">
-        {`The price is ${price}`}
+        {`$${price}`}
+        <span> per night</span>
       </div>
     );
   }

@@ -1,0 +1,12 @@
+.guest-entry {
+  display: flex;
+}
+
+.guest-control {
+  margin-left: auto;
+}
+
+body {
+  width: 25%;
+  height: 25%;
+}
