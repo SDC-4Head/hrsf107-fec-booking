@@ -1,7 +1,12 @@
 import React from 'react';
 import PropType from 'prop-types';
 
-const GuestOptionEntry = ({ type, guests, handleAddClick, handleSubtractClick }) => (
+const GuestOptionEntry = ({
+  type,
+  guests,
+  handleAddClick,
+  handleSubtractClick,
+}) => (
   <div className="guest-entry">
     {type}
     <div className="guest-control">
@@ -19,6 +24,8 @@ GuestOptionEntry.defaultProps = {
 GuestOptionEntry.propTypes = {
   guests: PropType.number,
   type: PropType.string.isRequired,
+  handleAddClick: PropType.func.isRequired,
+  handleSubtractClick: PropType.func.isRequired,
 };
 
 export default GuestOptionEntry;

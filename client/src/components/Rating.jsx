@@ -7,8 +7,12 @@ const Rating = ({ stars }) => (
   </div>
 );
 
+Rating.defaultProps = {
+  stars: null,
+};
+
 Rating.propTypes = {
-  stars: PropTypes.number.isRequired,
+  stars: PropTypes.number,
 };
 
 export default Rating;
