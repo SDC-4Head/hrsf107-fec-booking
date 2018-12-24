@@ -12,7 +12,6 @@ DatePicker.propTypes = {
   handleDateChange: PropTypes.func.isRequired,
   checkInDate: PropTypes.string.isRequired,
   checkOutDate: PropTypes.string.isRequired,
-
-}
+};
 
 export default DatePicker;
