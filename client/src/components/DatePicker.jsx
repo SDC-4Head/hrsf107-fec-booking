@@ -1,20 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class DatePicker extends React.Component {
-  constructor(props) {
-    super(props);
+const DatePicker = ({ handleDateChange, checkInDate, checkOutDate }) => (
+  <div>
+    <input type="date" value={checkInDate} onChange={e => handleDateChange(e.target.value, 'checkIn')} />
+    <input type="date" value={checkOutDate} onChange={e => handleDateChange(e.target.value, 'checkOut')} />
+  </div>
+);
 
-    this.state = {};
-  }
+DatePicker.propTypes = {
+  handleDateChange: PropTypes.func.isRequired,
+  checkInDate: PropTypes.string.isRequired,
+  checkOutDate: PropTypes.string.isRequired,
 
-  render() {
-    return (
-      <div>
-        <input type="date" />
-        <input type="date" />
-      </div>
-    );
-  }
 }
 
 export default DatePicker;
