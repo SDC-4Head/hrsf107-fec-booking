@@ -58,4 +58,4 @@ const generateCalendarState = (month, year) => {
 
 // console.log(generateCalendarState('febuary', 2019));
 
-module.export = generateCalendarState;
+module.exports.generateCalendarState = generateCalendarState;

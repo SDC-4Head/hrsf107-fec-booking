@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Price from './Price';
+import Calendar from './Calendar/Calendar';
 
 class Booking extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Booking extends React.Component {
     return (
       <div>
         <Price price={price} />
+        <Calendar />
       </div>
     );
   }

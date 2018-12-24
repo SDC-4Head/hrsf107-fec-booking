@@ -1,4 +1,6 @@
 import React from 'react';
+import { generateCalendarState } from '../utilities/utils';
+import Day from './Day';
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -18,10 +20,26 @@ class Calendar extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const year = new Date().getFullYear();
+    this.setState({
+      currentMonth: 'February',
+      monthState: generateCalendarState('February', year),
+    });
+  }
+
   render() {
-    const { monthState, currentMonth } = this.state;
+    const { monthState } = this.state;
+    const calendar = monthState.map((week, weekIndex) => (
+      <tr>
+        {week.map((day, dayIndex) => <Day day={monthState[weekIndex][dayIndex]} />) }
+      </tr>
+    ));
     return (
-      <div>Calendar</div>
+      <table>
+        {calendar}
+      </table>
+
     );
   }
 }
