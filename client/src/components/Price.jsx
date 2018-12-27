@@ -7,7 +7,7 @@ const Price = ({ price }) => {
     return (
       <div className="price">
         {`$${price}`}
-        <span> per night</span>
+        <span id="per-night"> per night</span>
       </div>
     );
   }

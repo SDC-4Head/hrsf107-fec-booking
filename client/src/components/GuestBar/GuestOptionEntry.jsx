@@ -10,9 +10,9 @@ const GuestOptionEntry = ({
   <div className="guest-entry">
     {type}
     <div className="guest-control">
-      <input type="button" value="+" onClick={() => handleAddClick(type)} />
-      {guests}
-      <input type="button" value="-" onClick={() => handleSubtractClick(type)} />
+      <input type="button" value="-" onClick={() => handleSubtractClick(type)} className="guest-button" />
+      <span className="guest-number">{guests}</span>
+      <input type="button" value="+" onClick={() => handleAddClick(type)} className="guest-button" />
     </div>
   </div>
 );

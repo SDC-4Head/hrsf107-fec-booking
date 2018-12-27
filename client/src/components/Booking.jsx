@@ -125,7 +125,7 @@ class Booking extends React.Component {
             : null
         }
         <div>
-          <input type="submit" value="Request to Book" />
+          <input type="submit" value="Book" id="btn-book" />
         </div>
       </div>
     );

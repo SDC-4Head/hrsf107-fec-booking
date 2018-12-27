@@ -101,12 +101,12 @@ class Calendar extends React.Component {
 
     return (
       <div>
-        <div>
-          <button type="button" onClick={this.handlePreviousMonthClick}><i className="fas fa-arrow-left" /></button>
-          {currentMonth}
-          <button type="button" onClick={this.handleNextMonthClick}><i className="fas fa-arrow-right" /></button>
+        <div id="calendar-banner">
+          <button type="button" onClick={this.handlePreviousMonthClick}><i className="fas fa-long-arrow-alt-left left" /></button>
+          <span id="month">{currentMonth}</span>
+          <button type="button" onClick={this.handleNextMonthClick}><i className="fas fa-long-arrow-alt-right right" /></button>
         </div>
-        <table>
+        <table id="calendar">
           <tbody>
             {calendar}
           </tbody>

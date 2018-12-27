@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Rating = ({ stars }) => (
-  <div>
+  <div id="stars">
     {`${Math.floor(stars)} stars`}
   </div>
 );

@@ -41,8 +41,11 @@ class GuestSelector extends React.Component {
   render() {
     const { isClicked, handleClick } = this.props;
     return (
-      <div>
-        <input type="button" value={this.determineGuestCount()} onClick={handleClick} />
+      <div id="guest-container">
+        <button type="button" onClick={handleClick} id="guest-selector">
+          {this.determineGuestCount()}
+          <i className="fas fa-chevron-down" />
+        </button>
         {
           isClicked
             ? (

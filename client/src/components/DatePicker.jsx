@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const DatePicker = ({ handleDateClick, checkInDate, checkOutDate }) => (
   <div>
-    <input type="text" readOnly value={checkInDate} onClick={e => handleDateClick(e.target.value, 'checkIn')} />
+    <input type="text" readOnly value={checkInDate || 'Check In'} onClick={e => handleDateClick(e.target.value, 'checkIn')} />
     <i className="fas fa-arrow-right" />
-    <input type="text" readOnly value={checkOutDate} onClick={e => handleDateClick(e.target.value, 'checkOut')} />
+    <input type="text" readOnly value={checkOutDate || 'Check Out'} onClick={e => handleDateClick(e.target.value, 'checkOut')} />
   </div>
 );
 
