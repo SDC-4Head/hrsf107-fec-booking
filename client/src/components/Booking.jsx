@@ -28,6 +28,7 @@ class Booking extends React.Component {
 
     this.handleGuestBarClick = this.handleGuestBarClick.bind(this);
     this.handleDateClick = this.handleDateClick.bind(this);
+    this.handleCalendarClick = this.handleCalendarClick.bind(this);
   }
 
   componentDidMount() {
@@ -66,8 +67,19 @@ class Booking extends React.Component {
   }
 
   // I just need a fully formed date from this.
-  handleCalendarClick(date) { 
-    console.log(date);
+  handleCalendarClick(date) {
+    const { showCheckInCalendar, showCheckOutCalendar } = this.state;
+    if (showCheckInCalendar) {
+      this.setState({
+        checkInDate: date,
+      });
+      return;
+    }
+    if (showCheckOutCalendar) {
+      this.setState({
+        checkOutDate: date,
+      });
+    }
   }
 
   render() {
@@ -75,14 +87,22 @@ class Booking extends React.Component {
       price, stars, isGuestBarClicked, checkInDate,
       checkOutDate, serviceFee, cleaningFee, showCheckInCalendar, showCheckOutCalendar,
     } = this.state;
+
+    const transformDate = (date) => {
+      if (date instanceof Date) {
+        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+      }
+      return '';
+    };
+
     return (
       <div id="booking-bar">
         <Price price={price} />
         <Rating stars={stars} />
         <hr />
         <DatePicker
-          checkInDate={checkInDate}
-          checkOutDate={checkOutDate}
+          checkInDate={transformDate(checkInDate)}
+          checkOutDate={transformDate(checkOutDate)}
           handleDateClick={this.handleDateClick}
         />
         {
@@ -95,8 +115,8 @@ class Booking extends React.Component {
           (checkInDate && checkOutDate)
             ? (
               <Total
-                checkInDate={checkInDate}
-                checkOutDate={checkOutDate}
+                checkInDate={transformDate(checkInDate)}
+                checkOutDate={transformDate(checkOutDate)}
                 price={price}
                 serviceFee={serviceFee}
                 cleaningFee={cleaningFee}

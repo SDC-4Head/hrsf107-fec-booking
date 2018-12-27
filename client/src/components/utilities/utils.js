@@ -56,6 +56,6 @@ const generateCalendarState = (month, year) => {
   return formatCalendar(calendar);
 };
 
-console.log(generateCalendarState('november', 2018));
+// console.log(generateCalendarState('november', 2018));
 
 module.exports.generateCalendarState = generateCalendarState;
