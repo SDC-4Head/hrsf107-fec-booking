@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Price from './Price';
+import Calendar from './Calendar/Calendar';
 import DatePicker from './DatePicker';
 import Rating from './Rating';
 import GuestSelector from './GuestBar/GuestSelector';
@@ -21,10 +22,13 @@ class Booking extends React.Component {
       checkOutDate: '',
       serviceFee: 0,
       cleaningFee: 0,
+      showCheckInCalendar: false,
+      showCheckOutCalendar: false,
     };
 
     this.handleGuestBarClick = this.handleGuestBarClick.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleDateClick = this.handleDateClick.bind(this);
+    this.handleCalendarClick = this.handleCalendarClick.bind(this);
   }
 
   componentDidMount() {
@@ -40,11 +44,20 @@ class Booking extends React.Component {
       });
   }
 
-  handleDateChange(date, type) {
+  handleDateClick(date, type) {
+    const { showCheckInCalendar, showCheckOutCalendar } = this.state;
     if (type === 'checkIn') {
-      this.setState({ checkInDate: date });
+      this.setState({
+        checkInDate: date,
+        showCheckInCalendar: !showCheckInCalendar,
+        showCheckOutCalendar: false,
+      });
     } else if (type === 'checkOut') {
-      this.setState({ checkOutDate: date });
+      this.setState({
+        checkOutDate: date,
+        showCheckOutCalendar: !showCheckOutCalendar,
+        showCheckInCalendar: false,
+      });
     }
   }
 
@@ -53,27 +66,57 @@ class Booking extends React.Component {
     this.setState({ isGuestBarClicked: !isGuestBarClicked });
   }
 
+  // I just need a fully formed date from this.
+  handleCalendarClick(date) {
+    const { showCheckInCalendar, showCheckOutCalendar } = this.state;
+    if (showCheckInCalendar) {
+      this.setState({
+        checkInDate: date,
+      });
+      return;
+    }
+    if (showCheckOutCalendar) {
+      this.setState({
+        checkOutDate: date,
+      });
+    }
+  }
+
   render() {
     const {
-      price, stars, isGuestBarClicked, checkInDate, checkOutDate, serviceFee, cleaningFee,
+      price, stars, isGuestBarClicked, checkInDate,
+      checkOutDate, serviceFee, cleaningFee, showCheckInCalendar, showCheckOutCalendar,
     } = this.state;
+
+    const transformDate = (date) => {
+      if (date instanceof Date) {
+        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+      }
+      return '';
+    };
+
     return (
       <div id="booking-bar">
         <Price price={price} />
         <Rating stars={stars} />
         <hr />
         <DatePicker
-          checkInDate={checkInDate}
-          checkOutDate={checkOutDate}
-          handleDateChange={this.handleDateChange}
+          checkInDate={transformDate(checkInDate)}
+          checkOutDate={transformDate(checkOutDate)}
+          handleDateClick={this.handleDateClick}
         />
+        {
+          showCheckInCalendar || showCheckOutCalendar
+            ? <Calendar handleCalendarClick={this.handleCalendarClick} />
+            : null
+        }
         <GuestSelector isClicked={isGuestBarClicked} handleClick={this.handleGuestBarClick} />
         {
           (checkInDate && checkOutDate)
             ? (
               <Total
-                checkInDate={checkInDate}
-                checkOutDate={checkOutDate}
+                checkInDate={transformDate(checkInDate)}
+                checkOutDate={transformDate(checkOutDate)}
                 price={price}
                 serviceFee={serviceFee}
                 cleaningFee={cleaningFee}

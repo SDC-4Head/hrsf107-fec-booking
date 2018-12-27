@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DatePicker = ({ handleDateChange, checkInDate, checkOutDate }) => (
+const DatePicker = ({ handleDateClick, checkInDate, checkOutDate }) => (
   <div>
-    <input type="date" value={checkInDate} onChange={e => handleDateChange(e.target.value, 'checkIn')} />
-    <input type="date" value={checkOutDate} onChange={e => handleDateChange(e.target.value, 'checkOut')} />
+    <input type="text" readOnly value={checkInDate} onClick={e => handleDateClick(e.target.value, 'checkIn')} />
+    <i className="fas fa-arrow-right" />
+    <input type="text" readOnly value={checkOutDate} onClick={e => handleDateClick(e.target.value, 'checkOut')} />
   </div>
 );
 
 DatePicker.propTypes = {
-  handleDateChange: PropTypes.func.isRequired,
+  handleDateClick: PropTypes.func.isRequired,
   checkInDate: PropTypes.string.isRequired,
   checkOutDate: PropTypes.string.isRequired,
 };
