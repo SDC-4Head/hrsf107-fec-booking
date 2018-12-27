@@ -22,6 +22,7 @@ class Booking extends React.Component {
       checkOutDate: '',
       serviceFee: 0,
       cleaningFee: 0,
+      showCalendar: false,
     };
 
     this.handleGuestBarClick = this.handleGuestBarClick.bind(this);
@@ -42,10 +43,11 @@ class Booking extends React.Component {
   }
 
   handleDateChange(date, type) {
+    const { showCalendar } = this.state;
     if (type === 'checkIn') {
-      this.setState({ checkInDate: date });
+      this.setState({ checkInDate: date, showCalendar: !showCalendar });
     } else if (type === 'checkOut') {
-      this.setState({ checkOutDate: date });
+      this.setState({ checkOutDate: date, showCalendar: !showCalendar });
     }
   }
 
@@ -56,7 +58,8 @@ class Booking extends React.Component {
 
   render() {
     const {
-      price, stars, isGuestBarClicked, checkInDate, checkOutDate, serviceFee, cleaningFee,
+      price, stars, isGuestBarClicked, checkInDate,
+      checkOutDate, serviceFee, cleaningFee, showCalendar,
     } = this.state;
     return (
       <div id="booking-bar">
@@ -68,7 +71,11 @@ class Booking extends React.Component {
           checkOutDate={checkOutDate}
           handleDateChange={this.handleDateChange}
         />
-        <Calendar />
+        {
+          showCalendar
+            ? <Calendar />
+            : null
+        }
         <GuestSelector isClicked={isGuestBarClicked} handleClick={this.handleGuestBarClick} />
         {
           (checkInDate && checkOutDate)

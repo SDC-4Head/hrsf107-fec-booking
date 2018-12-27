@@ -21,9 +21,12 @@ class Calendar extends React.Component {
   }
 
   componentDidMount() {
-    const year = new Date().getFullYear();
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const monthIndex = currentDate.getMonth();
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     this.setState({
-      currentMonth: 'February',
+      currentMonth: months[monthIndex],
       monthState: generateCalendarState('February', year),
     });
   }
@@ -32,7 +35,7 @@ class Calendar extends React.Component {
     const { monthState, currentMonth } = this.state;
     const calendar = monthState.map((week, weekIndex) => (
       <tr>
-        {week.map((day, dayIndex) => <Day day={monthState[weekIndex][dayIndex]} />) }
+        {week.map((__, dayIndex) => <Day day={monthState[weekIndex][dayIndex]} />) }
       </tr>
     ));
 
