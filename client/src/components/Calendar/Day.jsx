@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Day = ({ day }) => (
+const Day = ({ day, handleDayClick }) => (
   <td>
-    {day}
+    <button type="button" onClick={handleDayClick} value={day}>{day}</button>
   </td>
 );
 

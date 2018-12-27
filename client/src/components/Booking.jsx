@@ -27,7 +27,7 @@ class Booking extends React.Component {
     };
 
     this.handleGuestBarClick = this.handleGuestBarClick.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleDateClick = this.handleDateClick.bind(this);
   }
 
   componentDidMount() {
@@ -43,7 +43,7 @@ class Booking extends React.Component {
       });
   }
 
-  handleDateChange(date, type) {
+  handleDateClick(date, type) {
     const { showCheckInCalendar, showCheckOutCalendar } = this.state;
     if (type === 'checkIn') {
       this.setState({
@@ -64,6 +64,11 @@ class Booking extends React.Component {
     const { isGuestBarClicked } = this.state;
     this.setState({ isGuestBarClicked: !isGuestBarClicked });
   }
+  
+  // I just need a fully formed date from this.
+  handleCalendarClick(date) { 
+    console.log(date);
+  }
 
   render() {
     const {
@@ -78,11 +83,11 @@ class Booking extends React.Component {
         <DatePicker
           checkInDate={checkInDate}
           checkOutDate={checkOutDate}
-          handleDateChange={this.handleDateChange}
+          handleDateClick={this.handleDateClick}
         />
         {
           showCheckInCalendar || showCheckOutCalendar
-            ? <Calendar />
+            ? <Calendar handleCalendarClick={this.handleCalendarClick} />
             : null
         }
         <GuestSelector isClicked={isGuestBarClicked} handleClick={this.handleGuestBarClick} />
