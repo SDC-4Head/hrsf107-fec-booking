@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { generateCalendarState } from '../utilities/utils';
 import Day from './Day';
+
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -8,6 +11,7 @@ class Calendar extends React.Component {
 
     this.state = {
       currentMonth: '',
+      currentYear: null,
       monthState: [
       // Sun    M     T     W     Th   F     Sat
         [null, null, null, null, null, null, null],
@@ -20,16 +24,18 @@ class Calendar extends React.Component {
     };
 
     this.handleDayClick = this.handleDayClick.bind(this);
+    this.handlePreviousMonthClick = this.handlePreviousMonthClick.bind(this);
+    this.handleNextMonthClick = this.handleNextMonthClick.bind(this);
   }
 
   componentDidMount() {
     const currentDate = new Date();
-    const year = currentDate.getFullYear();
+    const currentYear = currentDate.getFullYear();
     const monthIndex = currentDate.getMonth();
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     this.setState({
       currentMonth: months[monthIndex],
-      monthState: generateCalendarState(months[monthIndex], year),
+      monthState: generateCalendarState(months[monthIndex], currentYear),
+      currentYear,
     });
   }
 
@@ -38,25 +44,68 @@ class Calendar extends React.Component {
     // this will be the reach into the booking bar to set the
     // checkIn or CheckOut Date depending on which calendar is open.
     const { handleCalendarClick } = this.props;
-    const { currentMonth } = this.state;
-    // let's decorate the date and send it off.
+    const { currentMonth, currentYear } = this.state;
     const day = e.target.value;
-    // need to a state for year, but for now I'll hard code a date.
-    const date = new Date(`${currentMonth} ${day}, 2019`);
+    // console.log(`${currentMonth} ${day}, ${currentYear}`)
+    const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
     handleCalendarClick(date);
+  }
+
+  handlePreviousMonthClick() {
+    const { currentMonth, currentYear } = this.state;
+    let monthIndex = months.indexOf(currentMonth) - 1;
+    if (monthIndex < 0) {
+      monthIndex = months.length - 1;
+      const previousYear = currentYear - 1;
+      this.setState({
+        currentMonth: months[monthIndex],
+        currentYear: previousYear,
+        monthState: generateCalendarState(months[monthIndex], previousYear),
+      });
+    } else {
+      this.setState({
+        currentMonth: months[monthIndex],
+        monthState: generateCalendarState(months[monthIndex], currentYear),
+      });
+    }
+  }
+
+  handleNextMonthClick() {
+    const { currentMonth, currentYear } = this.state;
+    let monthIndex = months.indexOf(currentMonth) + 1;
+    if (monthIndex > months.length - 1) {
+      monthIndex = 0;
+      const nextYear = currentYear + 1;
+      this.setState({
+        currentMonth: months[monthIndex],
+        currentYear: nextYear,
+        monthState: generateCalendarState(months[monthIndex], nextYear),
+      });
+    } else {
+      this.setState({
+        currentMonth: months[monthIndex],
+        monthState: generateCalendarState(months[monthIndex], currentYear),
+      });
+    }
   }
 
   render() {
     const { monthState, currentMonth } = this.state;
     const calendar = monthState.map((week, weekIndex) => (
       <tr>
-        {week.map((__, dayIndex) => <Day day={monthState[weekIndex][dayIndex]} handleDayClick={this.handleDayClick} />) }
+        {week.map((__, dayIndex) => (
+          <Day day={monthState[weekIndex][dayIndex]} handleDayClick={this.handleDayClick} />
+        ))}
       </tr>
     ));
 
     return (
       <div>
-        <p>{currentMonth}</p>
+        <div>
+          <button type="button" onClick={this.handlePreviousMonthClick}><i className="fas fa-arrow-left" /></button>
+          {currentMonth}
+          <button type="button" onClick={this.handleNextMonthClick}><i className="fas fa-arrow-right" /></button>
+        </div>
         <table>
           <tbody>
             {calendar}
@@ -66,5 +115,9 @@ class Calendar extends React.Component {
     );
   }
 }
+
+Calendar.propTypes = {
+  handleCalendarClick: PropTypes.func.isRequired,
+};
 
 export default Calendar;

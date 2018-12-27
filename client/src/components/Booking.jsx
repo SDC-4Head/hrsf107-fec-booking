@@ -64,7 +64,7 @@ class Booking extends React.Component {
     const { isGuestBarClicked } = this.state;
     this.setState({ isGuestBarClicked: !isGuestBarClicked });
   }
-  
+
   // I just need a fully formed date from this.
   handleCalendarClick(date) { 
     console.log(date);

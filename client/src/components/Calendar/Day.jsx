@@ -13,6 +13,7 @@ Day.defaultProps = {
 
 Day.propTypes = {
   day: PropTypes.number,
+  handleDayClick: PropTypes.func.isRequired,
 };
 
 export default Day;

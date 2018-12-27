@@ -14,7 +14,7 @@ const getNumberOfDaysInMonth = (month, year) => {
   const nextMonth = new Date(year, nextMonthIndex);
   const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24;
 
-  return (nextMonth - initialMonth) / MILLISECONDS_IN_DAY;
+  return Math.floor((nextMonth - initialMonth) / MILLISECONDS_IN_DAY);
 };
 
 const padCalendar = (firstDayInMonth, lastDayInMonth, calendar) => {
@@ -56,6 +56,6 @@ const generateCalendarState = (month, year) => {
   return formatCalendar(calendar);
 };
 
-// console.log(generateCalendarState('febuary', 2019));
+console.log(generateCalendarState('november', 2018));
 
 module.exports.generateCalendarState = generateCalendarState;
