@@ -90,13 +90,20 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const { monthState, currentMonth } = this.state;
-    console.log(monthState);
+    const { monthState, currentMonth, currentYear } = this.state;
+    const { bookedDates } = this.props;
     const calendar = monthState.map((week, weekIndex) => (
       <tr>
-        {week.map((__, dayIndex) => (
-          <Day day={monthState[weekIndex][dayIndex]} handleDayClick={this.handleDayClick} />
-        ))}
+        {week.map((__, dayIndex) => {
+          const day = monthState[weekIndex][dayIndex];
+          if (day) {
+            const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
+            return (
+              <Day handleDayClick={this.handleDayClick} date={date} bookedDates={bookedDates} />
+            );
+          }
+          return <Day handleDayClick={this.handleDayClick} date={null} />;
+        })}
       </tr>
     ));
 
@@ -119,6 +126,7 @@ class Calendar extends React.Component {
 
 Calendar.propTypes = {
   handleCalendarClick: PropTypes.func.isRequired,
+  bookedDates: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default Calendar;

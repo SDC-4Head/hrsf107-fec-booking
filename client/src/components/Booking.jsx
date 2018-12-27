@@ -24,6 +24,7 @@ class Booking extends React.Component {
       cleaningFee: 0,
       showCheckInCalendar: false,
       showCheckOutCalendar: false,
+      bookedDates: [],
     };
 
     this.handleGuestBarClick = this.handleGuestBarClick.bind(this);
@@ -36,10 +37,10 @@ class Booking extends React.Component {
     axios.get(`/api/rooms/${roomId}`)
       .then(({ data }) => {
         const {
-          price, stars, serviceFee, cleaningFee,
+          price, stars, serviceFee, cleaningFee, bookedDates,
         } = data;
         this.setState({
-          price, stars, serviceFee, cleaningFee,
+          price, stars, serviceFee, cleaningFee, bookedDates,
         });
       });
   }
@@ -86,6 +87,7 @@ class Booking extends React.Component {
     const {
       price, stars, isGuestBarClicked, checkInDate,
       checkOutDate, serviceFee, cleaningFee, showCheckInCalendar, showCheckOutCalendar,
+      bookedDates,
     } = this.state;
 
     const transformDate = (date) => {
@@ -108,7 +110,7 @@ class Booking extends React.Component {
         />
         {
           showCheckInCalendar || showCheckOutCalendar
-            ? <Calendar handleCalendarClick={this.handleCalendarClick} />
+            ? <Calendar handleCalendarClick={this.handleCalendarClick} bookedDates={bookedDates} />
             : null
         }
         <span className="element-headers">Guests</span>
