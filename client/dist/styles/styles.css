@@ -1,12 +1,189 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+button {
+  border: none;
+}
+
+#booking-bar {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1% 2%;
+  width: 25%;
+}
 .guest-entry {
+  margin: 15px 0;
+  font-size: 14px;
   display: flex;
+  text-transform: capitalize;
 }
 
 .guest-control {
   margin-left: auto;
 }
 
-body {
-  width: 25%;
-  height: 25%;
+.price {
+  font-weight: 700;
+}
+
+#per-night, #stars{
+  font-weight: 400;
+  font-size: 0.5em;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#btn-book {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  width: 100%;
+  padding: 5px 0;
+  display: block;
+  margin: 10px auto;
+  border-color: transparent;
+  border-radius: 4px;
+  background-color: rgb(255, 90, 95);
+}
+
+#calendar-banner {
+  font-weight: 700;
+  margin: 10px 0 5px 0;
+  text-align: center;
+}
+
+.left, .right {
+  border: 0.5px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  color: rgba(0,0,0,0.2);
+  font-size: 16px;
+  margin: auto;
+  padding: 10% 25%;
+}
+
+#calendar {
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+  table-layout: fixed;
+  background: white;
+  border-spacing: 0;
+  width: 100%;
+  text-align: center
+}
+
+td {
+  padding: 0;
+  margin: 0;
+  /* width: 100%;
+  height: 100%; */
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+}
+
+tr {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.day {
+  display: inline-block;
+  /* width: 100%;
+  height: 100%; */
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#month {
+  margin: 0 10px;
+}
+
+#guest-container {
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.fa-chevron-down {
+  margin-left: auto;
+  vertical-align: middle;
+  line-height: 150%;
+}
+
+#guest-selector {
+  display: flex;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 150%;
+  height: 35px;
+  width: 100%;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.guest-button {
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 132, 137);
+}
+
+.guest-button:hover {
+  cursor: pointer;
+}
+
+.guest-number {
+  display: inline-block;
+  min-width: 20px;
+  margin: 0 15px;
+}
+
+.date-picker {
+  border: none;
+  height: 35px;
+  margin-left: 10px;
+}
+.date-picker:hover {
+  cursor: pointer;
+}
+
+#date-picker-container {
+  color: rgba(0,0,0,0.2);
+  border: 1px solid rgb(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.element-headers {
+  font-size: 0.75em;
+  font-weight: 700;
+}
+
+#guest-label {
+  margin-left: 10px;
 }
