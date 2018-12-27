@@ -91,6 +91,7 @@ class Calendar extends React.Component {
 
   render() {
     const { monthState, currentMonth } = this.state;
+    console.log(monthState);
     const calendar = monthState.map((week, weekIndex) => (
       <tr>
         {week.map((__, dayIndex) => (
