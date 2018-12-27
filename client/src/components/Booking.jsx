@@ -100,6 +100,7 @@ class Booking extends React.Component {
         <Price price={price} />
         <Rating stars={stars} />
         <hr />
+        <span className="element-headers">Dates</span>
         <DatePicker
           checkInDate={transformDate(checkInDate)}
           checkOutDate={transformDate(checkOutDate)}
@@ -110,6 +111,7 @@ class Booking extends React.Component {
             ? <Calendar handleCalendarClick={this.handleCalendarClick} />
             : null
         }
+        <span className="element-headers">Guests</span>
         <GuestSelector isClicked={isGuestBarClicked} handleClick={this.handleGuestBarClick} />
         {
           (checkInDate && checkOutDate)

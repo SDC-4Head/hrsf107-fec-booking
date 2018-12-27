@@ -43,7 +43,7 @@ class GuestSelector extends React.Component {
     return (
       <div id="guest-container">
         <button type="button" onClick={handleClick} id="guest-selector">
-          {this.determineGuestCount()}
+          <span id="guest-label">{this.determineGuestCount()}</span>
           <i className="fas fa-chevron-down" />
         </button>
         {
