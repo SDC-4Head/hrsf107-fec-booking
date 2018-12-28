@@ -101,7 +101,9 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const { monthState, currentMonth, currentYear, checkInDate, checkOutDate } = this.state;
+    const {
+      monthState, currentMonth, currentYear, checkInDate, checkOutDate,
+    } = this.state;
     const { bookedDates } = this.props;
     const calendar = monthState.map((week, weekIndex) => (
       <tr>
@@ -110,7 +112,13 @@ class Calendar extends React.Component {
           if (day) {
             const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
             return (
-              <Day handleDayClick={this.handleDayClick} date={date} bookedDates={bookedDates} checkInDate={checkInDate} checkOutDate={checkOutDate} />
+              <Day
+                handleDayClick={this.handleDayClick}
+                date={date}
+                bookedDates={bookedDates}
+                checkInDate={checkInDate}
+                checkOutDate={checkOutDate}
+              />
             );
           }
           return <Day handleDayClick={this.handleDayClick} date={null} />;
@@ -138,6 +146,10 @@ class Calendar extends React.Component {
 Calendar.propTypes = {
   handleCalendarClick: PropTypes.func.isRequired,
   bookedDates: PropTypes.instanceOf(Array).isRequired,
+  showCheckInCalendar: PropTypes.bool.isRequired,
+  showCheckOutCalendar: PropTypes.bool.isRequired,
+  checkInDate: PropTypes.instanceOf(Date).isRequired,
+  checkOutDate: PropTypes.instanceOf(Date).isRequired,
 };
 
 export default Calendar;

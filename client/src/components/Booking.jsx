@@ -111,7 +111,6 @@ class Booking extends React.Component {
                 checkOutDate={checkOutDate}
                 showCheckInCalendar={showCheckInCalendar}
                 showCheckOutCalendar={showCheckOutCalendar}
-                
               />
             )
             : null

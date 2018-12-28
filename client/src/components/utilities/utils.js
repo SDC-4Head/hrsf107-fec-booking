@@ -67,4 +67,3 @@ const transformDate = (date) => {
 
 module.exports.generateCalendarState = generateCalendarState;
 module.exports.transformDate = transformDate;
-
