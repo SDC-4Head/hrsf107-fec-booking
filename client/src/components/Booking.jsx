@@ -118,7 +118,7 @@ class Booking extends React.Component {
         <span className="element-headers">Guests</span>
         <GuestSelector isClicked={isGuestBarClicked} handleClick={this.handleGuestBarClick} />
         {
-          (checkInDate && checkOutDate)
+          (checkInDate instanceof Date && checkOutDate instanceof Date)
             ? (
               <Total
                 checkInDate={transformDate(checkInDate)}

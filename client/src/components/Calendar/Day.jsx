@@ -19,13 +19,26 @@ const Day = ({
     return true;
   };
 
+  const fillBetweenDates = () => {
+    if (checkInDate instanceof Date && checkOutDate instanceof Date) {
+      const startDate = checkInDate.valueOf();
+      const endDate = checkOutDate.valueOf();
+      if (date.valueOf() > startDate && date.valueOf() < endDate) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   if (date && checkIfValidDate(date)) {
-    const isMatchingDate = transformDate(checkInDate) === transformDate(date)
-      || transformDate(checkOutDate) === transformDate(date);
-    const classes = isMatchingDate ? 'day selected' : 'day';
+    const isMatchingDate = (
+      transformDate(checkInDate) === transformDate(date)
+      || transformDate(checkOutDate) === transformDate(date)
+    );
+    const classes = fillBetweenDates() || isMatchingDate ? 'selected' : 'valid';
     return (
-      <td className="valid">
-        <button type="button" onClick={handleDayClick} value={date.getDate()} className={classes}>{date.getDate()}</button>
+      <td className={classes}>
+        <button type="button" onClick={handleDayClick} value={date.getDate()} className="day">{date.getDate()}</button>
       </td>
     );
   }
@@ -47,14 +60,17 @@ const Day = ({
 
 Day.defaultProps = {
   date: null,
+  checkInDate: '',
+  checkOutDate: '',
+  bookedDates: [],
 };
 
 Day.propTypes = {
   date: PropTypes.instanceOf(Date),
   handleDayClick: PropTypes.func.isRequired,
-  bookedDates: PropTypes.instanceOf(Array).isRequired,
-  checkInDate: PropTypes.instanceOf(Date).isRequired,
-  checkOutDate: PropTypes.instanceOf(Date).isRequired,
+  bookedDates: PropTypes.instanceOf(Array),
+  checkInDate: PropTypes.string,
+  checkOutDate: PropTypes.string,
 };
 
 export default Day;

@@ -148,8 +148,8 @@ Calendar.propTypes = {
   bookedDates: PropTypes.instanceOf(Array).isRequired,
   showCheckInCalendar: PropTypes.bool.isRequired,
   showCheckOutCalendar: PropTypes.bool.isRequired,
-  checkInDate: PropTypes.instanceOf(Date).isRequired,
-  checkOutDate: PropTypes.instanceOf(Date).isRequired,
+  checkInDate: PropTypes.string.isRequired,
+  checkOutDate: PropTypes.string.isRequired,
 };
 
 export default Calendar;
