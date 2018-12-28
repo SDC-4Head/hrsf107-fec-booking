@@ -39,15 +39,15 @@ class GuestSelector extends React.Component {
   }
 
   render() {
-    const { isClicked, handleClick } = this.props;
+    const { showGuestOptions, handleGuestBarClick } = this.props;
     return (
       <div id="guest-container">
-        <button type="button" onClick={handleClick} id="guest-selector">
+        <button type="button" onClick={() => handleGuestBarClick(!showGuestOptions)} id="guest-selector">
           <span id="guest-label">{this.determineGuestCount()}</span>
           <i className="fas fa-chevron-down" />
         </button>
         {
-          isClicked
+          showGuestOptions
             ? (
               <GuestOptionsList
                 {...this.state}
@@ -63,8 +63,8 @@ class GuestSelector extends React.Component {
 }
 
 GuestSelector.propTypes = {
-  isClicked: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  showGuestOptions: PropTypes.bool.isRequired,
+  handleGuestBarClick: PropTypes.func.isRequired,
 };
 
 export default GuestSelector;

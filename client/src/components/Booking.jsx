@@ -8,6 +8,7 @@ import Rating from './Rating';
 import GuestSelector from './GuestBar/GuestSelector';
 import Total from './Total';
 import { transformDate } from './utilities/utils';
+import GuestSelectorContainer from '../containers/GuestSelectorContainer';
 
 class Booking extends React.Component {
   constructor(props) {
@@ -98,7 +99,7 @@ class Booking extends React.Component {
 
   render() {
     const {
-      price, stars, isGuestBarClicked, checkInDate,
+      price, stars, checkInDate,
       checkOutDate, serviceFee, cleaningFee,
       bookedDates,
     } = this.state;
@@ -127,7 +128,7 @@ class Booking extends React.Component {
             : null
         }
         <span className="element-headers">Guests</span>
-        <GuestSelector isClicked={isGuestBarClicked} handleClick={this.handleGuestBarClick} />
+        <GuestSelectorContainer />
         {
           (checkInDate instanceof Date && checkOutDate instanceof Date)
             ? (
