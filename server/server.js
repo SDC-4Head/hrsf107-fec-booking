@@ -4,10 +4,10 @@ const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const Reservations = require('../db/models/reservations.js');
-const { transformDate } = require('../client/src/components/utilities/utils');
 
 mongoose.connect('mongodb://localhost/errbnb', { useNewUrlParser: true })
   .then(() => {
+    /* eslint-disable-next-line */
     console.log('Connected to Dataase');
   });
 
@@ -55,5 +55,6 @@ app.get('/*', (req, res) => {
 });
 
 app.listen(PORT, () => {
+  /* eslint-disable-next-line */
   console.log(`Server listening on port: ${PORT}`);
 });
