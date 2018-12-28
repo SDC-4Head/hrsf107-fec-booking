@@ -100,6 +100,8 @@ class Booking extends React.Component {
           checkInDate={transformDate(checkInDate)}
           checkOutDate={transformDate(checkOutDate)}
           handleDateClick={this.handleDateClick}
+          showCheckInCalendar={showCheckInCalendar}
+          showCheckOutCalendar={showCheckOutCalendar}
         />
         {
           showCheckInCalendar || showCheckOutCalendar
