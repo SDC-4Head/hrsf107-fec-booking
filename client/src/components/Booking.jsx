@@ -15,7 +15,6 @@ class Booking extends React.Component {
 
     const { roomId } = this.props;
     this.state = {
-      roomId,
       stars: null,
       price: null,
       checkInDate: '',
@@ -25,22 +24,60 @@ class Booking extends React.Component {
       showCheckInCalendar: false,
       showCheckOutCalendar: false,
       bookedDates: [],
+      adults: 1,
+      children: 0,
+      infants: 0,
+    };
+
+    this.makeReservation = () => {
+      const {
+        checkInDate, checkOutDate, adults, children, infants,
+      } = this.state;
+      const payload = {
+        startDate: checkInDate,
+        endDate: checkOutDate,
+        guests: {
+          adults,
+          children,
+          infants,
+        },
+      };
+
+      axios.patch(`/api/rooms/${roomId}`, payload)
+        .then(() => {
+          /* eslint-disable-next-line */
+          window.alert('Booked');
+          this.getData();
+        });
+    };
+
+    this.getData = () => {
+      axios.get(`/api/rooms/${roomId}`)
+        .then(({ data }) => {
+          const {
+            price, stars, serviceFee, cleaningFee, bookedDates,
+          } = data;
+          this.setState({
+            price, stars, serviceFee, cleaningFee, bookedDates,
+          });
+        });
     };
 
     this.handleCalendarClick = this.handleCalendarClick.bind(this);
+    this.getNumberOfGuests = this.getNumberOfGuests.bind(this);
   }
 
   componentDidMount() {
-    const { roomId } = this.state;
-    axios.get(`/api/rooms/${roomId}`)
-      .then(({ data }) => {
-        const {
-          price, stars, serviceFee, cleaningFee, bookedDates,
-        } = data;
-        this.setState({
-          price, stars, serviceFee, cleaningFee, bookedDates,
-        });
-      });
+    this.getData();
+  }
+
+  getNumberOfGuests(guestObj) {
+    const { adults, children, infants } = guestObj;
+    this.setState({
+      adults,
+      children,
+      infants,
+    });
   }
 
   handleCalendarClick(date) {
@@ -117,7 +154,7 @@ class Booking extends React.Component {
             : null
         }
         <div>
-          <input type="submit" value="Book" id="btn-book" />
+          <input type="submit" onClick={this.makeReservation} value="Book" id="btn-book" />
         </div>
       </div>
     );
