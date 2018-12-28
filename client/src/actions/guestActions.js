@@ -28,8 +28,15 @@ const incrementInfants = num => ({
   quantity: num,
 });
 
+const toggleGuestOptions = bool => ({
+  type: 'TOGGLE_GUEST_OPTIONS',
+  isDisplayed: bool,
+});
+
+
 export {
   decrementAdults, decrementChildren,
   decrementInfants, incrementAdults,
   incrementChildren, incrementInfants,
+  toggleGuestOptions,
 };

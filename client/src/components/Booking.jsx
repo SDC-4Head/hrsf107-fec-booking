@@ -18,7 +18,6 @@ class Booking extends React.Component {
       roomId,
       stars: null,
       price: null,
-      isGuestBarClicked: false,
       checkInDate: '',
       checkOutDate: '',
       serviceFee: 0,
@@ -28,8 +27,6 @@ class Booking extends React.Component {
       bookedDates: [],
     };
 
-    this.handleGuestBarClick = this.handleGuestBarClick.bind(this);
-    this.handleDateClick = this.handleDateClick.bind(this);
     this.handleCalendarClick = this.handleCalendarClick.bind(this);
   }
 
@@ -44,28 +41,6 @@ class Booking extends React.Component {
           price, stars, serviceFee, cleaningFee, bookedDates,
         });
       });
-  }
-
-  handleDateClick(date, type) {
-    const { showCheckInCalendar, showCheckOutCalendar } = this.state;
-    if (type === 'checkIn') {
-      this.setState({
-        checkInDate: date,
-        showCheckInCalendar: !showCheckInCalendar,
-        showCheckOutCalendar: false,
-      });
-    } else if (type === 'checkOut') {
-      this.setState({
-        checkOutDate: date,
-        showCheckOutCalendar: !showCheckOutCalendar,
-        showCheckInCalendar: false,
-      });
-    }
-  }
-
-  handleGuestBarClick() {
-    const { isGuestBarClicked } = this.state;
-    this.setState({ isGuestBarClicked: !isGuestBarClicked });
   }
 
   handleCalendarClick(date) {
