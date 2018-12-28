@@ -4,11 +4,10 @@ import axios from 'axios';
 import Price from './Price';
 import Calendar from './Calendar/Calendar';
 import DatePickerContainer from '../containers/DatePickerContainer';
+import GuestSelectorContainer from '../containers/GuestSelectorContainer';
 import Rating from './Rating';
-import GuestSelector from './GuestBar/GuestSelector';
 import Total from './Total';
 import { transformDate } from './utilities/utils';
-import GuestSelectorContainer from '../containers/GuestSelectorContainer';
 
 class Booking extends React.Component {
   constructor(props) {

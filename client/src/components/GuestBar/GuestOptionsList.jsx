@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import GuestOptionEntry from './GuestOptionEntry';
 
 const GuestOptions = ({
-  adults,
-  children,
-  infants,
-  handleAddClick,
-  handleSubtractClick,
+  adults, children, infants, handleAddClick, handleSubtractClick,
 }) => (
   <div>
     <GuestOptionEntry type="adults" guests={adults} handleAddClick={handleAddClick} handleSubtractClick={handleSubtractClick} />
