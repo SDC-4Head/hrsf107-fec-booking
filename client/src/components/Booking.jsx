@@ -71,16 +71,6 @@ class Booking extends React.Component {
   }
 
   componentDidMount() {
-    // const { roomId } = this.state;
-    // axios.get(`/api/rooms/${roomId}`)
-    //   .then(({ data }) => {
-    //     const {
-    //       price, stars, serviceFee, cleaningFee, bookedDates,
-    //     } = data;
-    //     this.setState({
-    //       price, stars, serviceFee, cleaningFee, bookedDates,
-    //     });
-    //   });
     this.getData();
   }
 
