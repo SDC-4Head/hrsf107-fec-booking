@@ -69,7 +69,7 @@ class Booking extends React.Component {
   }
 
   handleCalendarClick(date) {
-    const { showCheckInCalendar, showCheckOutCalendar } = this.state;
+    const { showCheckInCalendar, showCheckOutCalendar, checkInDate } = this.state;
     if (showCheckInCalendar) {
       this.setState({
         checkInDate: date,
@@ -79,11 +79,20 @@ class Booking extends React.Component {
       return;
     }
     if (showCheckOutCalendar) {
-      this.setState({
-        checkOutDate: date,
-        showCheckInCalendar: false,
-        showCheckOutCalendar: false,
-      });
+      if (checkInDate.valueOf() > date.valueOf()) {
+        this.setState({
+          checkOutDate: checkInDate,
+          checkInDate: date,
+          showCheckInCalendar: false,
+          showCheckOutCalendar: false,
+        });
+      } else {
+        this.setState({
+          checkOutDate: date,
+          showCheckInCalendar: false,
+          showCheckOutCalendar: false,
+        });
+      }
     }
   }
 
