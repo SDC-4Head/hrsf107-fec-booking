@@ -15,7 +15,6 @@ class Booking extends React.Component {
 
     const { roomId } = this.props;
     this.state = {
-      roomId,
       stars: null,
       price: null,
       isGuestBarClicked: false,
@@ -26,24 +25,62 @@ class Booking extends React.Component {
       showCheckInCalendar: false,
       showCheckOutCalendar: false,
       bookedDates: [],
+      adults: 1,
+      children: 0,
+      infants: 0,
+    };
+
+    this.makeReservation = () => {
+      const {
+        checkInDate, checkOutDate, adults, children, infants,
+      } = this.state;
+      const payload = {
+        startDate: checkInDate,
+        endDate: checkOutDate,
+        guests: {
+          adults,
+          children,
+          infants,
+        },
+      };
+
+      axios.patch(`/api/rooms/${roomId}`, payload)
+        .then(() => {
+          /* eslint-disable-next-line */
+          window.alert('Booked');
+          this.getData();
+        });
+    };
+
+    this.getData = () => {
+      axios.get(`/api/rooms/${roomId}`)
+        .then(({ data }) => {
+          const {
+            price, stars, serviceFee, cleaningFee, bookedDates,
+          } = data;
+          this.setState({
+            price, stars, serviceFee, cleaningFee, bookedDates,
+          });
+        });
     };
 
     this.handleGuestBarClick = this.handleGuestBarClick.bind(this);
     this.handleDateClick = this.handleDateClick.bind(this);
     this.handleCalendarClick = this.handleCalendarClick.bind(this);
+    this.getNumberOfGuests = this.getNumberOfGuests.bind(this);
   }
 
   componentDidMount() {
-    const { roomId } = this.state;
-    axios.get(`/api/rooms/${roomId}`)
-      .then(({ data }) => {
-        const {
-          price, stars, serviceFee, cleaningFee, bookedDates,
-        } = data;
-        this.setState({
-          price, stars, serviceFee, cleaningFee, bookedDates,
-        });
-      });
+    this.getData();
+  }
+
+  getNumberOfGuests(guestObj) {
+    const { adults, children, infants } = guestObj;
+    this.setState({
+      adults,
+      children,
+      infants,
+    });
   }
 
   handleDateClick(date, type) {
@@ -131,7 +168,11 @@ class Booking extends React.Component {
             : null
         }
         <span className="element-headers">Guests</span>
-        <GuestSelector isClicked={isGuestBarClicked} handleClick={this.handleGuestBarClick} />
+        <GuestSelector
+          isClicked={isGuestBarClicked}
+          handleClick={this.handleGuestBarClick}
+          getNumberOfGuests={this.getNumberOfGuests}
+        />
         {
           (checkInDate instanceof Date && checkOutDate instanceof Date)
             ? (
@@ -146,7 +187,7 @@ class Booking extends React.Component {
             : null
         }
         <div>
-          <input type="submit" value="Book" id="btn-book" />
+          <input type="submit" onClick={this.makeReservation} value="Book" id="btn-book" />
         </div>
       </div>
     );

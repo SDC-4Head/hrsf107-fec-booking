@@ -18,18 +18,24 @@ class GuestSelector extends React.Component {
   }
 
   handleAddClick(guestType) {
+    const { getNumberOfGuests } = this.props;
     let { [guestType]: count } = this.state;
     this.setState({
       [guestType]: count += 1,
+    }, () => {
+      getNumberOfGuests(this.state);
     });
   }
 
   handleSubtractClick(guestType) {
+    const { getNumberOfGuests } = this.props;
     let { [guestType]: count } = this.state;
     const checkIfNegative = num => num < 0;
     count -= 1;
     this.setState({
       [guestType]: checkIfNegative(count) ? 0 : count,
+    }, () => {
+      getNumberOfGuests(this.state);
     });
   }
 
