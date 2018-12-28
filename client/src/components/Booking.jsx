@@ -73,12 +73,16 @@ class Booking extends React.Component {
     if (showCheckInCalendar) {
       this.setState({
         checkInDate: date,
+        showCheckInCalendar: !showCheckInCalendar,
+        showCheckOutCalendar: !showCheckOutCalendar,
       });
       return;
     }
     if (showCheckOutCalendar) {
       this.setState({
         checkOutDate: date,
+        showCheckInCalendar: false,
+        showCheckOutCalendar: false,
       });
     }
   }
