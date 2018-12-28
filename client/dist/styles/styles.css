@@ -197,3 +197,7 @@ button:hover {
   color: rgba(216, 216, 216);
   text-decoration: line-through;
 }
+
+.selected {
+  background-color: purple;
+}

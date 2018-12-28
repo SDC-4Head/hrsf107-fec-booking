@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { transformDate } from '../utilities/utils';
 
-const Day = ({ handleDayClick, date, bookedDates }) => {
+const Day = ({ handleDayClick, date, bookedDates, checkInDate, checkOutDate }) => {
   const checkIfValidDate = (checkDate) => {
     // check if the date is between any of the bookedDates
     for (let i = 0; i < bookedDates.length; i += 1) {
@@ -17,9 +18,11 @@ const Day = ({ handleDayClick, date, bookedDates }) => {
   };
 
   if (date && checkIfValidDate(date)) {
+    const isMatchingDate = transformDate(checkInDate) === transformDate(date) || transformDate(checkOutDate) === transformDate(date);
+    const classes = isMatchingDate ? 'day selected' : 'day';
     return (
       <td className="valid">
-        <button type="button" onClick={handleDayClick} value={date.getDate()} className="day">{date.getDate()}</button>
+        <button type="button" onClick={handleDayClick} value={date.getDate()} className={classes}>{date.getDate()}</button>
       </td>
     );
   }

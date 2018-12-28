@@ -58,4 +58,13 @@ const generateCalendarState = (month, year) => {
 
 console.log(generateCalendarState('March', 2019));
 
+const transformDate = (date) => {
+  if (date instanceof Date) {
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  }
+  return '';
+};
+
 module.exports.generateCalendarState = generateCalendarState;
+module.exports.transformDate = transformDate;
+

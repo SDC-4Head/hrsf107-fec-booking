@@ -7,6 +7,7 @@ import DatePicker from './DatePicker';
 import Rating from './Rating';
 import GuestSelector from './GuestBar/GuestSelector';
 import Total from './Total';
+import { transformDate } from './utilities/utils';
 
 class Booking extends React.Component {
   constructor(props) {
@@ -67,7 +68,6 @@ class Booking extends React.Component {
     this.setState({ isGuestBarClicked: !isGuestBarClicked });
   }
 
-  // I just need a fully formed date from this.
   handleCalendarClick(date) {
     const { showCheckInCalendar, showCheckOutCalendar } = this.state;
     if (showCheckInCalendar) {
@@ -90,13 +90,6 @@ class Booking extends React.Component {
       bookedDates,
     } = this.state;
 
-    const transformDate = (date) => {
-      if (date instanceof Date) {
-        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-      }
-      return '';
-    };
-
     return (
       <div id="booking-bar">
         <Price price={price} />
@@ -110,7 +103,17 @@ class Booking extends React.Component {
         />
         {
           showCheckInCalendar || showCheckOutCalendar
-            ? <Calendar handleCalendarClick={this.handleCalendarClick} bookedDates={bookedDates} />
+            ? (
+              <Calendar
+                handleCalendarClick={this.handleCalendarClick}
+                bookedDates={bookedDates}
+                checkInDate={checkInDate}
+                checkOutDate={checkOutDate}
+                showCheckInCalendar={showCheckInCalendar}
+                showCheckOutCalendar={showCheckOutCalendar}
+                
+              />
+            )
             : null
         }
         <span className="element-headers">Guests</span>
