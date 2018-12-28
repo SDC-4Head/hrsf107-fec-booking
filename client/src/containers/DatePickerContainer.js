@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import DatePicker from '../components/DatePicker';
-import showCheckInCalendar from '../actions/checkInCalendar';
-import showCheckOutCalendar from '../actions/checkOutCalendar';
+import { toggleCheckInCalendar, toggleCheckOutCalendar } from '../actions/calenderActions';
 
 const mapStateToProps = state => ({
   showCheckInCalendar: state.checkIn,
@@ -10,12 +9,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleCheckInClick: (displayCheckIn, displayCheckOut) => {
-    dispatch(showCheckInCalendar(displayCheckIn));
-    dispatch(showCheckOutCalendar(displayCheckOut));
+    dispatch(toggleCheckInCalendar(displayCheckIn));
+    dispatch(toggleCheckOutCalendar(displayCheckOut));
   },
   handleCheckOutClick: (displayCheckOut, displayCheckIn) => {
-    dispatch(showCheckOutCalendar(displayCheckOut));
-    dispatch(showCheckInCalendar(displayCheckIn));
+    dispatch(toggleCheckOutCalendar(displayCheckOut));
+    dispatch(toggleCheckInCalendar(displayCheckIn));
   },
 });
 

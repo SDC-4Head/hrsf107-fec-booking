@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 import GuestSelector from '../components/GuestBar/GuestSelector';
 import showGuestOptionsList from '../actions/guestOptionsList';
-import incrementAdultGuest from '../actions/incrementAdultGuest';
-import decrementAdultGuest from '../actions/decrementAdultGuest';
-import incrementChildren from '../actions/incrementChildren';
-import decrementChildren from '../actions/decrementChildren';
-import incrementInfants from '../actions/incrementInfants';
-import decrementInfants from '../actions/decrementInfants';
+import {
+  incrementAdults, decrementAdults,
+  incrementChildren, decrementChildren,
+  incrementInfants, decrementInfants,
+} from '../actions/guestActions';
 
 const mapStateToProps = state => ({
   showGuestOptions: state.guestOptions,
@@ -22,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
   handleAddClick: (numberOfGuests, guestType) => {
     let action;
     if (guestType === 'adults') {
-      action = incrementAdultGuest;
+      action = incrementAdults;
     } else if (guestType === 'children') {
       action = incrementChildren;
     } else if (guestType === 'infants') {
@@ -33,7 +32,7 @@ const mapDispatchToProps = dispatch => ({
   handleSubtractClick: (numberOfAdults, guestType) => {
     let action;
     if (guestType === 'adults') {
-      action = decrementAdultGuest;
+      action = decrementAdults;
     } else if (guestType === 'children') {
       action = decrementChildren;
     } else if (guestType === 'infants') {
