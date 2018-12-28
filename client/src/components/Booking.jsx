@@ -7,6 +7,7 @@ import DatePicker from './DatePicker';
 import Rating from './Rating';
 import GuestSelector from './GuestBar/GuestSelector';
 import Total from './Total';
+import { transformDate } from './utilities/utils';
 
 class Booking extends React.Component {
   constructor(props) {
@@ -67,19 +68,31 @@ class Booking extends React.Component {
     this.setState({ isGuestBarClicked: !isGuestBarClicked });
   }
 
-  // I just need a fully formed date from this.
   handleCalendarClick(date) {
-    const { showCheckInCalendar, showCheckOutCalendar } = this.state;
+    const { showCheckInCalendar, showCheckOutCalendar, checkInDate } = this.state;
     if (showCheckInCalendar) {
       this.setState({
         checkInDate: date,
+        showCheckInCalendar: !showCheckInCalendar,
+        showCheckOutCalendar: !showCheckOutCalendar,
       });
       return;
     }
     if (showCheckOutCalendar) {
-      this.setState({
-        checkOutDate: date,
-      });
+      if (checkInDate.valueOf() > date.valueOf()) {
+        this.setState({
+          checkOutDate: checkInDate,
+          checkInDate: date,
+          showCheckInCalendar: false,
+          showCheckOutCalendar: false,
+        });
+      } else {
+        this.setState({
+          checkOutDate: date,
+          showCheckInCalendar: false,
+          showCheckOutCalendar: false,
+        });
+      }
     }
   }
 
@@ -89,13 +102,6 @@ class Booking extends React.Component {
       checkOutDate, serviceFee, cleaningFee, showCheckInCalendar, showCheckOutCalendar,
       bookedDates,
     } = this.state;
-
-    const transformDate = (date) => {
-      if (date instanceof Date) {
-        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-      }
-      return '';
-    };
 
     return (
       <div id="booking-bar">
@@ -107,16 +113,27 @@ class Booking extends React.Component {
           checkInDate={transformDate(checkInDate)}
           checkOutDate={transformDate(checkOutDate)}
           handleDateClick={this.handleDateClick}
+          showCheckInCalendar={showCheckInCalendar}
+          showCheckOutCalendar={showCheckOutCalendar}
         />
         {
           showCheckInCalendar || showCheckOutCalendar
-            ? <Calendar handleCalendarClick={this.handleCalendarClick} bookedDates={bookedDates} />
+            ? (
+              <Calendar
+                handleCalendarClick={this.handleCalendarClick}
+                bookedDates={bookedDates}
+                checkInDate={checkInDate}
+                checkOutDate={checkOutDate}
+                showCheckInCalendar={showCheckInCalendar}
+                showCheckOutCalendar={showCheckOutCalendar}
+              />
+            )
             : null
         }
         <span className="element-headers">Guests</span>
         <GuestSelector isClicked={isGuestBarClicked} handleClick={this.handleGuestBarClick} />
         {
-          (checkInDate && checkOutDate)
+          (checkInDate instanceof Date && checkOutDate instanceof Date)
             ? (
               <Total
                 checkInDate={transformDate(checkInDate)}

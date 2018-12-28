@@ -9,8 +9,11 @@ class Calendar extends React.Component {
   constructor(props) {
     super(props);
 
+    const { checkInDate, checkOutDate } = this.props;
     this.state = {
       currentMonth: '',
+      checkInDate,
+      checkOutDate,
       currentYear: null,
       monthState: [
       // Sun    M     T     W     Th   F     Sat
@@ -40,11 +43,23 @@ class Calendar extends React.Component {
   }
 
   handleDayClick(e) {
-    const { handleCalendarClick } = this.props;
+    const { handleCalendarClick, showCheckInCalendar, showCheckOutCalendar } = this.props;
     const { currentMonth, currentYear } = this.state;
     const day = e.target.value;
     const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
-    handleCalendarClick(date);
+    if (showCheckInCalendar) {
+      this.setState({
+        checkInDate: date,
+      }, () => {
+        handleCalendarClick(date);
+      });
+    } else if (showCheckOutCalendar) {
+      this.setState({
+        checkOutDate: date,
+      }, () => {
+        handleCalendarClick(date);
+      });
+    }
   }
 
   handlePreviousMonthClick() {
@@ -86,7 +101,9 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const { monthState, currentMonth, currentYear } = this.state;
+    const {
+      monthState, currentMonth, currentYear, checkInDate, checkOutDate,
+    } = this.state;
     const { bookedDates } = this.props;
     const calendar = monthState.map((week, weekIndex) => (
       <tr>
@@ -95,7 +112,13 @@ class Calendar extends React.Component {
           if (day) {
             const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
             return (
-              <Day handleDayClick={this.handleDayClick} date={date} bookedDates={bookedDates} />
+              <Day
+                handleDayClick={this.handleDayClick}
+                date={date}
+                bookedDates={bookedDates}
+                checkInDate={checkInDate}
+                checkOutDate={checkOutDate}
+              />
             );
           }
           return <Day handleDayClick={this.handleDayClick} date={null} />;
@@ -123,6 +146,10 @@ class Calendar extends React.Component {
 Calendar.propTypes = {
   handleCalendarClick: PropTypes.func.isRequired,
   bookedDates: PropTypes.instanceOf(Array).isRequired,
+  showCheckInCalendar: PropTypes.bool.isRequired,
+  showCheckOutCalendar: PropTypes.bool.isRequired,
+  checkInDate: PropTypes.string.isRequired,
+  checkOutDate: PropTypes.string.isRequired,
 };
 
 export default Calendar;
