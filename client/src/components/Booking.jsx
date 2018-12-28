@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import Price from './Price';
 import Calendar from './Calendar/Calendar';
-import DatePicker from './DatePicker';
+import DatePickerContainer from '../containers/DatePickerContainer';
 import Rating from './Rating';
 import GuestSelector from './GuestBar/GuestSelector';
 import Total from './Total';
@@ -99,9 +99,11 @@ class Booking extends React.Component {
   render() {
     const {
       price, stars, isGuestBarClicked, checkInDate,
-      checkOutDate, serviceFee, cleaningFee, showCheckInCalendar, showCheckOutCalendar,
+      checkOutDate, serviceFee, cleaningFee,
       bookedDates,
     } = this.state;
+
+    const { showCheckInCalendar, showCheckOutCalendar } = this.props;
 
     return (
       <div id="booking-bar">
@@ -109,13 +111,7 @@ class Booking extends React.Component {
         <Rating stars={stars} />
         <hr />
         <span className="element-headers">Dates</span>
-        <DatePicker
-          checkInDate={transformDate(checkInDate)}
-          checkOutDate={transformDate(checkOutDate)}
-          handleDateClick={this.handleDateClick}
-          showCheckInCalendar={showCheckInCalendar}
-          showCheckOutCalendar={showCheckOutCalendar}
-        />
+        <DatePickerContainer />
         {
           showCheckInCalendar || showCheckOutCalendar
             ? (
@@ -155,6 +151,8 @@ class Booking extends React.Component {
 
 Booking.propTypes = {
   roomId: PropTypes.string.isRequired,
+  showCheckInCalendar: PropTypes.bool.isRequired,
+  showCheckOutCalendar: PropTypes.bool.isRequired,
 };
 
 export default Booking;
