@@ -39,14 +39,10 @@ class Calendar extends React.Component {
     });
   }
 
-  // Need a function here that takes in the handles CalendarClick and decorates it.
   handleDayClick(e) {
-    // this will be the reach into the booking bar to set the
-    // checkIn or CheckOut Date depending on which calendar is open.
     const { handleCalendarClick } = this.props;
     const { currentMonth, currentYear } = this.state;
     const day = e.target.value;
-    // console.log(`${currentMonth} ${day}, ${currentYear}`)
     const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
     handleCalendarClick(date);
   }
