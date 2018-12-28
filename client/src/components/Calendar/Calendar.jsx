@@ -39,14 +39,10 @@ class Calendar extends React.Component {
     });
   }
 
-  // Need a function here that takes in the handles CalendarClick and decorates it.
   handleDayClick(e) {
-    // this will be the reach into the booking bar to set the
-    // checkIn or CheckOut Date depending on which calendar is open.
     const { handleCalendarClick } = this.props;
     const { currentMonth, currentYear } = this.state;
     const day = e.target.value;
-    // console.log(`${currentMonth} ${day}, ${currentYear}`)
     const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
     handleCalendarClick(date);
   }
@@ -90,12 +86,20 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const { monthState, currentMonth } = this.state;
+    const { monthState, currentMonth, currentYear } = this.state;
+    const { bookedDates } = this.props;
     const calendar = monthState.map((week, weekIndex) => (
       <tr>
-        {week.map((__, dayIndex) => (
-          <Day day={monthState[weekIndex][dayIndex]} handleDayClick={this.handleDayClick} />
-        ))}
+        {week.map((__, dayIndex) => {
+          const day = monthState[weekIndex][dayIndex];
+          if (day) {
+            const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
+            return (
+              <Day handleDayClick={this.handleDayClick} date={date} bookedDates={bookedDates} />
+            );
+          }
+          return <Day handleDayClick={this.handleDayClick} date={null} />;
+        })}
       </tr>
     ));
 
@@ -118,6 +122,7 @@ class Calendar extends React.Component {
 
 Calendar.propTypes = {
   handleCalendarClick: PropTypes.func.isRequired,
+  bookedDates: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default Calendar;

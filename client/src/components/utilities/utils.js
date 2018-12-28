@@ -13,7 +13,9 @@ const getNumberOfDaysInMonth = (month, year) => {
   const nextMonthIndex = initialMonth.getMonth() + 1;
   const nextMonth = new Date(year, nextMonthIndex);
   const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24;
-
+  if (month === 'March') {
+    return Math.floor((nextMonth - initialMonth) / MILLISECONDS_IN_DAY) + 1;
+  }
   return Math.floor((nextMonth - initialMonth) / MILLISECONDS_IN_DAY);
 };
 
@@ -47,15 +49,13 @@ const generateCalendarState = (month, year) => {
   const numberOfDaysInMonth = getNumberOfDaysInMonth(month, year);
   const lastDayIndex = getLastDayInMonth(month, numberOfDaysInMonth, year);
   let calendar = [];
-
   for (let i = 1; i <= numberOfDaysInMonth; i += 1) {
     calendar.push(i);
   }
   calendar = padCalendar(firstDayIndex, lastDayIndex, calendar);
-
   return formatCalendar(calendar);
 };
 
-// console.log(generateCalendarState('november', 2018));
+console.log(generateCalendarState('March', 2019));
 
 module.exports.generateCalendarState = generateCalendarState;

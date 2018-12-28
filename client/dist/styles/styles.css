@@ -74,7 +74,8 @@ hr {
   background: white;
   border-spacing: 0;
   width: 100%;
-  text-align: center
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
 td {
@@ -84,7 +85,7 @@ td {
   height: 100%; */
   width: 25px;
   height: 25px;
-  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
 tr {
@@ -113,7 +114,7 @@ button:hover {
   cursor: pointer;
 }
 
-td:hover {
+.valid:hover {
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -186,4 +187,13 @@ td:hover {
 
 #guest-label {
   margin-left: 10px;
+}
+
+.invalid {
+  background-color: white;
+}
+
+.invalid button {
+  color: rgba(216, 216, 216);
+  text-decoration: line-through;
 }
