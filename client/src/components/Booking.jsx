@@ -15,7 +15,6 @@ class Booking extends React.Component {
 
     const { roomId } = this.props;
     this.state = {
-      roomId,
       stars: null,
       price: null,
       isGuestBarClicked: false,
@@ -46,7 +45,23 @@ class Booking extends React.Component {
       };
 
       axios.patch(`/api/rooms/${roomId}`, payload)
-        .then(console.log);
+        .then(() => {
+          /* eslint-disable-next-line */
+          window.alert('Booked');
+          this.getData();
+        });
+    };
+
+    this.getData = () => {
+      axios.get(`/api/rooms/${roomId}`)
+        .then(({ data }) => {
+          const {
+            price, stars, serviceFee, cleaningFee, bookedDates,
+          } = data;
+          this.setState({
+            price, stars, serviceFee, cleaningFee, bookedDates,
+          });
+        });
     };
 
     this.handleGuestBarClick = this.handleGuestBarClick.bind(this);
@@ -56,16 +71,17 @@ class Booking extends React.Component {
   }
 
   componentDidMount() {
-    const { roomId } = this.state;
-    axios.get(`/api/rooms/${roomId}`)
-      .then(({ data }) => {
-        const {
-          price, stars, serviceFee, cleaningFee, bookedDates,
-        } = data;
-        this.setState({
-          price, stars, serviceFee, cleaningFee, bookedDates,
-        });
-      });
+    // const { roomId } = this.state;
+    // axios.get(`/api/rooms/${roomId}`)
+    //   .then(({ data }) => {
+    //     const {
+    //       price, stars, serviceFee, cleaningFee, bookedDates,
+    //     } = data;
+    //     this.setState({
+    //       price, stars, serviceFee, cleaningFee, bookedDates,
+    //     });
+    //   });
+    this.getData();
   }
 
   getNumberOfGuests(guestObj) {
