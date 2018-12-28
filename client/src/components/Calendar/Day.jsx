@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { transformDate } from '../utilities/utils';
 
-const Day = ({ handleDayClick, date, bookedDates, checkInDate, checkOutDate }) => {
+const Day = ({
+  handleDayClick, date, bookedDates, checkInDate, checkOutDate,
+}) => {
   const checkIfValidDate = (checkDate) => {
     // check if the date is between any of the bookedDates
     for (let i = 0; i < bookedDates.length; i += 1) {
@@ -18,7 +20,8 @@ const Day = ({ handleDayClick, date, bookedDates, checkInDate, checkOutDate }) =
   };
 
   if (date && checkIfValidDate(date)) {
-    const isMatchingDate = transformDate(checkInDate) === transformDate(date) || transformDate(checkOutDate) === transformDate(date);
+    const isMatchingDate = transformDate(checkInDate) === transformDate(date)
+      || transformDate(checkOutDate) === transformDate(date);
     const classes = isMatchingDate ? 'day selected' : 'day';
     return (
       <td className="valid">
@@ -50,6 +53,8 @@ Day.propTypes = {
   date: PropTypes.instanceOf(Date),
   handleDayClick: PropTypes.func.isRequired,
   bookedDates: PropTypes.instanceOf(Array).isRequired,
+  checkInDate: PropTypes.instanceOf(Date).isRequired,
+  checkOutDate: PropTypes.instanceOf(Date).isRequired,
 };
 
 export default Day;
