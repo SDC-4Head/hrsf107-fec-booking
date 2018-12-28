@@ -11,7 +11,7 @@ const Day = ({
       const dates = bookedDates[i];
       const startDate = new Date(dates.startDate).valueOf();
       const endDate = new Date(dates.endDate).valueOf();
-      if (checkDate.valueOf() > startDate && checkDate.valueOf() < endDate) {
+      if (checkDate.valueOf() >= startDate && checkDate.valueOf() <= endDate) {
         // not valid
         return false;
       }

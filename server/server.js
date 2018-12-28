@@ -4,6 +4,7 @@ const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const Reservations = require('../db/models/reservations.js');
+const { transformDate } = require('../client/src/components/utilities/utils');
 
 mongoose.connect('mongodb://localhost/errbnb', { useNewUrlParser: true })
   .then(() => {
@@ -23,6 +24,29 @@ app.get('/api/rooms/:id', (req, res) => {
   Reservations.findOne({ _id: id })
     .then((result) => {
       res.send(result);
+    });
+});
+
+app.patch('/api/rooms/:id', (req, res) => {
+  const { id } = req.params;
+  const payload = req.body;
+  Reservations.findByIdAndUpdate({ _id: id })
+    .then((results) => {
+      const transformedDates = [];
+      results.bookedDates.forEach((date) => {
+        transformedDates.push(date.startDate.valueOf());
+        transformedDates.push(date.endDate.valueOf());
+      });
+      const includesStartDate = transformedDates.includes(new Date(payload.startDate).valueOf());
+      const includesEndDate = transformedDates.includes(new Date(payload.endDate).valueOf());
+      if (includesStartDate && includesEndDate) {
+        res.end('Duplicate Entry');
+      } else {
+        results.bookedDates.push(payload);
+        results.save(() => {
+          res.end('Saved to DB');
+        });
+      }
     });
 });
 
