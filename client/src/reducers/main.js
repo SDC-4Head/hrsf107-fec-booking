@@ -13,6 +13,7 @@ import stars from './starsReducer';
 import cleaningFee from './cleaningFeeReducer';
 import bookedDates from './bookedDatesReducer';
 import serviceFee from './serviceFeeReducer';
+import hoverDate from './hoverDateReducer';
 
 const rootReducer = combineReducers({
   checkIn,
@@ -29,6 +30,7 @@ const rootReducer = combineReducers({
   cleaningFee,
   bookedDates,
   serviceFee,
+  hoverDate,
 });
 
 export default rootReducer;

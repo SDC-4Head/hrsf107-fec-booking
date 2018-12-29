@@ -6,7 +6,7 @@ const Calendar = (props) => {
   const {
     loadCalendar, monthState,
     currentMonth, currentYear,
-    handlePreviousCalendar, handleNextCalendar,
+    handlePreviousCalendar, handleNextCalendar, hoveredDate,
   } = props;
   if (!monthState) {
     loadCalendar(new Date());
@@ -24,7 +24,6 @@ const Calendar = (props) => {
       })}
     </tr>
   ));
-
   return (
     <div>
       <div id="calendar-banner">

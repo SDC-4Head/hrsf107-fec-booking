@@ -72,9 +72,15 @@ const getNextMonth = (monthName, currentYear) => {
     state: generateCalendarState(getMonthNameFromIndex(getMonthIndexFromName(monthName) + 1), currentYear),
   };
 };
+
+const hoverOverCheckOutDate = date => ({
+  type: 'HOVER_DATE',
+  date,
+});
+
 export {
   toggleCheckOutCalendar, toggleCheckInCalendar,
   selectCheckInDate, selectCheckOutDate,
   getCurrentDate, getPreviousMonth,
-  getNextMonth,
+  getNextMonth, hoverOverCheckOutDate,
 };

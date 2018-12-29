@@ -4,7 +4,7 @@ import {
   selectCheckInDate, selectCheckOutDate,
   getCurrentDate, getPreviousMonth,
   getNextMonth, toggleCheckOutCalendar,
-  toggleCheckInCalendar,
+  toggleCheckInCalendar, hoverOverCheckOutDate,
 } from '../actions/calenderActions';
 
 const isCheckInSmaller = (checkInDate, selectedDate) => {
@@ -25,6 +25,7 @@ const mapStateToProps = state => ({
   monthState: state.currentDate.state,
   showCheckInCalendar: state.checkIn,
   showCheckOutCalendar: state.checkOut,
+  hoveredDate: state.hoveredDate,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -50,6 +51,12 @@ const mapDispatchToProps = dispatch => ({
   },
   handleNextCalendar: (monthIndex, currentYear) => {
     dispatch(getNextMonth(monthIndex, currentYear));
+  },
+  hoverOverDate: (date, showCheckOutCalendar) => {
+    if (showCheckOutCalendar) {
+      dispatch(hoverOverCheckOutDate(date));
+      dispatch(selectCheckOutDate(date));
+    }
   },
 });
 
