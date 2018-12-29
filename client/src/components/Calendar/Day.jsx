@@ -67,6 +67,8 @@ Day.defaultProps = {
   checkOutDate: '',
   bookedDates: [],
   handleDayClick: null,
+  showCheckInCalendar: false,
+  showCheckOutCalendar: false,
 };
 
 Day.propTypes = {
@@ -75,8 +77,8 @@ Day.propTypes = {
   bookedDates: PropTypes.instanceOf(Array),
   checkInDate: PropTypes.string,
   checkOutDate: PropTypes.string,
-  showCheckInCalendar: PropTypes.bool.isRequired,
-  showCheckOutCalendar: PropTypes.bool.isRequired,
+  showCheckInCalendar: PropTypes.bool,
+  showCheckOutCalendar: PropTypes.bool,
 };
 
 export default Day;

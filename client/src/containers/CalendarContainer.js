@@ -45,7 +45,7 @@ const mapDispatchToProps = dispatch => ({
   handlePreviousCalendar: (monthIndex, currentYear) => {
     dispatch(getPreviousMonth(monthIndex, currentYear));
   },
-  handleNextMonth: (monthIndex, currentYear) => {
+  handleNextCalendar: (monthIndex, currentYear) => {
     dispatch(getNextMonth(monthIndex, currentYear));
   },
 });
