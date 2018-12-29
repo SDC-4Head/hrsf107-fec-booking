@@ -32,19 +32,13 @@ class Calendar extends React.Component {
   }
 
   componentDidMount() {
-    const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const monthIndex = currentDate.getMonth();
-    this.setState({
-      currentMonth: months[monthIndex],
-      monthState: generateCalendarState(months[monthIndex], currentYear),
-      currentYear,
-    });
+    const { loadCalendar } = this.props;
+    loadCalendar(new Date());
   }
 
   handleDayClick(e) {
     const { handleCalendarClick, showCheckInCalendar, showCheckOutCalendar } = this.props;
-    const { currentMonth, currentYear } = this.state;
+    const { currentMonth, currentYear } = this.props;
     const day = e.target.value;
     const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
     if (showCheckInCalendar) {
@@ -102,44 +96,47 @@ class Calendar extends React.Component {
 
   render() {
     const {
-      monthState, currentMonth, currentYear, checkInDate, checkOutDate,
-    } = this.state;
-    const { bookedDates } = this.props;
-    const calendar = monthState.map((week, weekIndex) => (
-      <tr>
-        {week.map((__, dayIndex) => {
-          const day = monthState[weekIndex][dayIndex];
-          if (day) {
-            const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
-            return (
-              <Day
-                handleDayClick={this.handleDayClick}
-                date={date}
-                bookedDates={bookedDates}
-                checkInDate={checkInDate}
-                checkOutDate={checkOutDate}
-              />
-            );
-          }
-          return <Day handleDayClick={this.handleDayClick} date={null} />;
-        })}
-      </tr>
-    ));
+      bookedDates, monthState, currentMonth, currentYear, handleDayClick
+    } = this.props;
 
-    return (
-      <div>
-        <div id="calendar-banner">
-          <button type="button" onClick={this.handlePreviousMonthClick}><i className="fas fa-long-arrow-alt-left left" /></button>
-          <span id="month">{currentMonth}</span>
-          <button type="button" onClick={this.handleNextMonthClick}><i className="fas fa-long-arrow-alt-right right" /></button>
+    if (monthState) {
+      const calendar = monthState.map((week, weekIndex) => (
+        <tr>
+          {week.map((__, dayIndex) => {
+            const day = monthState[weekIndex][dayIndex];
+            if (day) {
+              const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
+              return (
+                <Day {...this.props} date={date} />
+                // handleDayClick={handleDayClick}
+                // date={date}
+                // bookedDates={bookedDates}
+                // checkInDate={checkInDate}
+                // checkOutDate={checkOutDate} 
+                // />
+              );
+            }
+            return <Day handleDayClick={this.handleDayClick} date={null} />;
+          })}
+        </tr>
+      ));
+
+      return (
+        <div>
+          <div id="calendar-banner">
+            <button type="button" onClick={this.handlePreviousMonthClick}><i className="fas fa-long-arrow-alt-left left" /></button>
+            <span id="month">{currentMonth}</span>
+            <button type="button" onClick={this.handleNextMonthClick}><i className="fas fa-long-arrow-alt-right right" /></button>
+          </div>
+          <table id="calendar">
+            <tbody>
+              {calendar}
+            </tbody>
+          </table>
         </div>
-        <table id="calendar">
-          <tbody>
-            {calendar}
-          </tbody>
-        </table>
-      </div>
-    );
+      );
+    }
+    return <p>loading</p>;
   }
 }
 
@@ -150,6 +147,8 @@ Calendar.propTypes = {
   showCheckOutCalendar: PropTypes.bool.isRequired,
   checkInDate: PropTypes.string.isRequired,
   checkOutDate: PropTypes.string.isRequired,
+  monthState: PropTypes.instanceOf(Array).isRequired,
+  loadCalendar: PropTypes.func.isRequired,
 };
 
 export default Calendar;

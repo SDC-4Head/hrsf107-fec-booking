@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { transformDate } from '../utilities/utils';
 
 const Day = ({
-  handleDayClick, date, bookedDates, checkInDate, checkOutDate,
+  handleDayClick, date, bookedDates, checkInDate, checkOutDate, showCheckInCalendar, showCheckOutCalendar,
 }) => {
   const checkIfValidDate = (checkDate) => {
     // check if the date is between any of the bookedDates
@@ -38,7 +38,7 @@ const Day = ({
     const classes = fillBetweenDates() || isMatchingDate ? 'selected' : 'valid';
     return (
       <td className={classes}>
-        <button type="button" onClick={handleDayClick} value={date.getDate()} className="day">{date.getDate()}</button>
+        <button type="button" onClick={() => handleDayClick(date, showCheckInCalendar, showCheckOutCalendar)} value={date.getDate()} className="day">{date.getDate()}</button>
       </td>
     );
   }

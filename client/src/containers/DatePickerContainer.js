@@ -3,6 +3,8 @@ import DatePicker from '../components/DatePicker';
 import { toggleCheckInCalendar, toggleCheckOutCalendar } from '../actions/calenderActions';
 
 const mapStateToProps = state => ({
+  checkInDate: state.checkInDate,
+  checkOutDate: state.checkOutDate,
   showCheckInCalendar: state.checkIn,
   showCheckOutCalendar: state.checkOut,
 });

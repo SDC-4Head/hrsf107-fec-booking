@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Price from './Price';
-import Calendar from './Calendar/Calendar';
+import CalendarContainer from '../containers/CalendarContainer';
 import DatePickerContainer from '../containers/DatePickerContainer';
 import GuestSelectorContainer from '../containers/GuestSelectorContainer';
 import Rating from './Rating';
@@ -63,7 +63,7 @@ class Booking extends React.Component {
         });
     };
 
-    this.handleCalendarClick = this.handleCalendarClick.bind(this);
+    // this.handleCalendarClick = this.handleCalendarClick.bind(this);
     this.getNumberOfGuests = this.getNumberOfGuests.bind(this);
   }
 
@@ -80,33 +80,33 @@ class Booking extends React.Component {
     });
   }
 
-  handleCalendarClick(date) {
-    const { showCheckInCalendar, showCheckOutCalendar, checkInDate } = this.state;
-    if (showCheckInCalendar) {
-      this.setState({
-        checkInDate: date,
-        showCheckInCalendar: !showCheckInCalendar,
-        showCheckOutCalendar: !showCheckOutCalendar,
-      });
-      return;
-    }
-    if (showCheckOutCalendar) {
-      if (checkInDate.valueOf() > date.valueOf()) {
-        this.setState({
-          checkOutDate: checkInDate,
-          checkInDate: date,
-          showCheckInCalendar: false,
-          showCheckOutCalendar: false,
-        });
-      } else {
-        this.setState({
-          checkOutDate: date,
-          showCheckInCalendar: false,
-          showCheckOutCalendar: false,
-        });
-      }
-    }
-  }
+  // handleCalendarClick(date) {
+  //   const { showCheckInCalendar, showCheckOutCalendar, checkInDate } = this.state;
+  //   if (showCheckInCalendar) {
+  //     this.setState({
+  //       checkInDate: date,
+  //       showCheckInCalendar: !showCheckInCalendar,
+  //       showCheckOutCalendar: !showCheckOutCalendar,
+  //     });
+  //     return;
+  //   }
+  //   if (showCheckOutCalendar) {
+  //     if (checkInDate.valueOf() > date.valueOf()) {
+  //       this.setState({
+  //         checkOutDate: checkInDate,
+  //         checkInDate: date,
+  //         showCheckInCalendar: false,
+  //         showCheckOutCalendar: false,
+  //       });
+  //     } else {
+  //       this.setState({
+  //         checkOutDate: date,
+  //         showCheckInCalendar: false,
+  //         showCheckOutCalendar: false,
+  //       });
+  //     }
+  //   }
+  // }
 
   render() {
     const {
@@ -127,14 +127,15 @@ class Booking extends React.Component {
         {
           showCheckInCalendar || showCheckOutCalendar
             ? (
-              <Calendar
-                handleCalendarClick={this.handleCalendarClick}
-                bookedDates={bookedDates}
-                checkInDate={checkInDate}
-                checkOutDate={checkOutDate}
-                showCheckInCalendar={showCheckInCalendar}
-                showCheckOutCalendar={showCheckOutCalendar}
-              />
+              <CalendarContainer />
+            // <Calendar
+            //   handleCalendarClick={this.handleCalendarClick}
+            //   bookedDates={bookedDates}
+            //   checkInDate={checkInDate}
+            //   checkOutDate={checkOutDate}
+            //   showCheckInCalendar={showCheckInCalendar}
+            //   showCheckOutCalendar={showCheckOutCalendar}
+            // />
             )
             : null
         }
