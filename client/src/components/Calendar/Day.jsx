@@ -38,7 +38,7 @@ const Day = ({
     const classes = fillBetweenDates() || isMatchingDate ? 'selected' : 'valid';
     return (
       <td className={classes}>
-        <button type="button" onClick={() => handleDayClick(date, showCheckInCalendar, showCheckOutCalendar)} value={date.getDate()} className="day">{date.getDate()}</button>
+        <button type="button" onClick={() => handleDayClick(date, showCheckInCalendar, showCheckOutCalendar, checkInDate, checkOutDate)} value={date.getDate()} className="day">{date.getDate()}</button>
       </td>
     );
   }

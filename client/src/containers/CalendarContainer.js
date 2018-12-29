@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import Calendar from '../components/Calendar/Calendar';
-import { selectCheckInDate, selectCheckOutDate, getCurrentDate } from '../actions/calenderActions';
+import {
+  selectCheckInDate, selectCheckOutDate,
+  getCurrentDate, getPreviousMonth,
+} from '../actions/calenderActions';
 
-const checkDates = (checkInDate, checkOutDate) => {
-  const checkInDateEpoch  = new Date(checkInDate).valueOf();
-  const chekOutDateEpoch = new Date(checkOutDate).valueOf();
-  
-  if (checkInDate > checkOutDate) {
-    
+const isCheckInSmaller = (checkInDate, selectedDate) => {
+  const checkInDateEpoch = new Date(checkInDate).valueOf();
+  const checkOutDateEpoch = selectedDate.valueOf();
+
+  if (checkInDateEpoch > checkOutDateEpoch) {
+    return false;
   }
-
-}
+  return true;
+};
 
 const mapStateToProps = state => ({
   checkInDate: state.checkInDate,
@@ -27,12 +30,19 @@ const mapDispatchToProps = dispatch => ({
   loadCalendar: (date) => {
     dispatch(getCurrentDate(date));
   },
-  handleDayClick: (date, isCheckIn, isCheckOut) => {
+  handleDayClick: (date, isCheckIn, isCheckOut, checkInDate) => {
     if (isCheckIn) {
       dispatch(selectCheckInDate(date));
     } else if (isCheckOut) {
       dispatch(selectCheckOutDate(date));
+      if (!isCheckInSmaller(checkInDate, date)) {
+        dispatch(selectCheckOutDate(new Date(checkInDate)));
+        dispatch(selectCheckInDate(date));
+      }
     }
+  },
+  handlePreviousCalendar: (monthIndex) => {
+    dispatch(getPreviousMonth(monthIndex));
   },
 });
 
