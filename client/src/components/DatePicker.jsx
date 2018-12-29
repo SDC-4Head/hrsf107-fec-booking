@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { transformDate } from './utilities/utils';
 
 // NEED TO ADD THE VALUE COMPONENT TO THESE INPUTS
 
@@ -12,9 +13,9 @@ const DatePicker = ({
   const activeCheckOut = showCheckOutCalendar ? 'date-picker active-date-picker' : 'date-picker';
   return (
     <div id="date-picker-container">
-      <input type="text" readOnly value={checkInDate} onClick={() => handleCheckInClick(!showCheckInCalendar, false)} className={activeCheckIn} />
+      <input type="text" readOnly value={transformDate(checkInDate) || 'Check In'} onClick={() => handleCheckInClick(!showCheckInCalendar, false)} className={activeCheckIn} />
       <i className="fas fa-long-arrow-alt-right date-right" />
-      <input type="text" readOnly value={checkOutDate} onClick={() => handleCheckOutClick(!showCheckOutCalendar, false)} className={activeCheckOut} />
+      <input type="text" readOnly value={transformDate(checkOutDate) || 'Check Out'} onClick={() => handleCheckOutClick(!showCheckOutCalendar, false)} className={activeCheckOut} />
     </div>
   );
 };

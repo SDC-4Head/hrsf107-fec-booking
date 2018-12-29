@@ -1,5 +1,5 @@
 import {
-  generateCalendarState, transformDate,
+  generateCalendarState,
   getMonthNameFromIndex, getMonthIndexFromName,
 } from '../components/utilities/utils';
 
@@ -15,12 +15,12 @@ const toggleCheckOutCalendar = bool => ({
 
 const selectCheckInDate = date => ({
   type: 'SELECT_CHECK_IN',
-  checkIn: transformDate(date),
+  checkIn: date,
 });
 
 const selectCheckOutDate = date => ({
   type: 'SELECT_CHECK_OUT',
-  checkOut: transformDate(date),
+  checkOut: date,
 });
 
 const getCurrentDate = (date) => {
