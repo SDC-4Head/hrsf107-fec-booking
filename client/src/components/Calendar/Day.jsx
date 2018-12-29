@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 import { transformDate } from '../utilities/utils';
 
 const Day = ({
-  handleDayClick, date, bookedDates, checkInDate, checkOutDate,
+  handleDayClick, date,
+  bookedDates, checkInDate,
+  checkOutDate, showCheckInCalendar,
+  showCheckOutCalendar, hoverOverDate,
 }) => {
   const checkIfValidDate = (checkDate) => {
-    // check if the date is between any of the bookedDates
     for (let i = 0; i < bookedDates.length; i += 1) {
       const dates = bookedDates[i];
       const startDate = new Date(dates.startDate).valueOf();
       const endDate = new Date(dates.endDate).valueOf();
       if (checkDate.valueOf() >= startDate && checkDate.valueOf() <= endDate) {
-        // not valid
         return false;
       }
     }
@@ -20,10 +21,10 @@ const Day = ({
   };
 
   const fillBetweenDates = () => {
-    if (checkInDate instanceof Date && checkOutDate instanceof Date) {
+    if (checkInDate instanceof Date && (checkOutDate instanceof Date)) {
       const startDate = checkInDate.valueOf();
       const endDate = checkOutDate.valueOf();
-      if (date.valueOf() > startDate && date.valueOf() < endDate) {
+      if (date.valueOf() > startDate && (date.valueOf() < endDate)) {
         return true;
       }
     }
@@ -38,7 +39,8 @@ const Day = ({
     const classes = fillBetweenDates() || isMatchingDate ? 'selected' : 'valid';
     return (
       <td className={classes}>
-        <button type="button" onClick={handleDayClick} value={date.getDate()} className="day">{date.getDate()}</button>
+        {/* eslint-disable-next-line */}
+        <button type="button" onMouseOver={() => hoverOverDate(date, showCheckOutCalendar)} onClick={() => handleDayClick(date, showCheckInCalendar, showCheckOutCalendar, checkInDate, checkOutDate)} value={date.getDate()} className="day">{date.getDate()}</button>
       </td>
     );
   }
@@ -60,17 +62,23 @@ const Day = ({
 
 Day.defaultProps = {
   date: null,
-  checkInDate: '',
-  checkOutDate: '',
+  checkInDate: null,
+  checkOutDate: null,
   bookedDates: [],
+  handleDayClick: null,
+  showCheckInCalendar: false,
+  showCheckOutCalendar: false,
 };
 
 Day.propTypes = {
   date: PropTypes.instanceOf(Date),
-  handleDayClick: PropTypes.func.isRequired,
+  handleDayClick: PropTypes.func,
+  hoverOverDate: PropTypes.func.isRequired,
   bookedDates: PropTypes.instanceOf(Array),
-  checkInDate: PropTypes.string,
-  checkOutDate: PropTypes.string,
+  checkInDate: PropTypes.instanceOf(Date),
+  checkOutDate: PropTypes.instanceOf(Date),
+  showCheckInCalendar: PropTypes.bool,
+  showCheckOutCalendar: PropTypes.bool,
 };
 
 export default Day;
