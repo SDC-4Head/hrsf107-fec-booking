@@ -4,6 +4,7 @@ import {
   selectCheckInDate, selectCheckOutDate,
   getCurrentDate, getPreviousMonth,
   getNextMonth, toggleCheckOutCalendar,
+  toggleCheckInCalendar,
 } from '../actions/calenderActions';
 
 const isCheckInSmaller = (checkInDate, selectedDate) => {
@@ -33,6 +34,8 @@ const mapDispatchToProps = dispatch => ({
   handleDayClick: (date, isCheckIn, isCheckOut, checkInDate) => {
     if (isCheckIn) {
       dispatch(selectCheckInDate(date));
+      dispatch(toggleCheckInCalendar(false));
+      dispatch(toggleCheckOutCalendar(true));
     } else if (isCheckOut) {
       dispatch(selectCheckOutDate(date));
       if (!isCheckInSmaller(checkInDate, date)) {
