@@ -6,7 +6,7 @@ const Calendar = (props) => {
   const {
     loadCalendar, monthState,
     currentMonth, currentYear,
-    handlePreviousCalendar, handleNextCalendar, hoveredDate,
+    handlePreviousCalendar, handleNextCalendar,
   } = props;
   if (!monthState) {
     loadCalendar(new Date());
