@@ -30,7 +30,7 @@ app.get('/api/rooms/:id', (req, res) => {
 app.patch('/api/rooms/:id', (req, res) => {
   const { id } = req.params;
   const payload = req.body;
-  Reservations.findByIdAndUpdate({ _id: id })
+  Reservations.findByIdAndUpdate({ _id: Number(id) })
     .then((results) => {
       const transformedDates = [];
       results.bookedDates.forEach((date) => {

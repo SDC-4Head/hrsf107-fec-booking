@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  setPrice, setStars, setCleaningFee, setBookedDates,
+  setPrice, setStars, setCleaningFee, setBookedDates, setServiceFee,
 } from './bookingActions';
 
 const getData = roomID => (
@@ -12,13 +12,14 @@ const getData = roomID => (
         dispatch(setCleaningFee(data.cleaningFee));
         dispatch(setBookedDates(data.bookedDates));
         dispatch(setPrice(data.price));
+        dispatch(setServiceFee(data.serviceFee));
       });
   }
 );
 
-const reserveDate = roomID => (
+const reserveDate = (roomID, payload) => (
   (dispatch) => {
-    axios.patch(`/api/rooms/${roomID}`)
+    axios.patch(`/api/rooms/${roomID}`, payload)
       .then(() => {
         /* eslint-disable-next-line */
         window.alert('Booked');

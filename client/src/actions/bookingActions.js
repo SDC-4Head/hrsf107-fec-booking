@@ -18,6 +18,11 @@ const setBookedDates = bookedDates => ({
   bookedDates,
 });
 
+const setServiceFee = serviceFee => ({
+  type: 'SET_SERVICE_FEE',
+  serviceFee,
+});
+
 export {
-  setPrice, setStars, setCleaningFee, setBookedDates,
+  setPrice, setStars, setCleaningFee, setBookedDates, setServiceFee,
 };

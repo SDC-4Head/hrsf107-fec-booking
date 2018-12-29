@@ -7,6 +7,7 @@ import DatePickerContainer from '../containers/DatePickerContainer';
 import GuestSelectorContainer from '../containers/GuestSelectorContainer';
 import Rating from './Rating';
 import Total from './Total';
+import store from '../store/store';
 import { transformDate } from './utilities/utils';
 
 class Booking extends React.Component {
@@ -27,55 +28,67 @@ class Booking extends React.Component {
       infants: 0,
     };
 
-    this.makeReservation = () => {
-      const {
-        checkInDate, checkOutDate, adults, children, infants,
-      } = this.state;
-      const payload = {
-        startDate: checkInDate,
-        endDate: checkOutDate,
-        guests: {
-          adults,
-          children,
-          infants,
-        },
-      };
+    // this.makeReservation = () => {
+    //   const {
+    //     checkInDate, checkOutDate, adults, children, infants,
+    //   } = this.state;
+    //   const payload = {
+    //     startDate: checkInDate,
+    //     endDate: checkOutDate,
+    //     guests: {
+    //       adults,
+    //       children,
+    //       infants,
+    //     },
+    //   };
 
-      axios.patch(`/api/rooms/${roomId}`, payload)
-        .then(() => {
-          /* eslint-disable-next-line */
-          window.alert('Booked');
-          this.getData();
-        });
-    };
+    //   axios.patch(`/api/rooms/${roomId}`, payload)
+    //     .then(() => {
+    //       /* eslint-disable-next-line */
+    //       window.alert('Booked');
+    //       this.getData();
+    //     });
+    // };
 
-    this.getData = () => {
-      axios.get(`/api/rooms/${roomId}`)
-        .then(({ data }) => {
-          const {
-            price, stars, serviceFee, cleaningFee, bookedDates,
-          } = data;
-          this.setState({
-            price, stars, serviceFee, cleaningFee, bookedDates,
-          });
-        });
-    };
+    // this.getData = () => {
+    //   axios.get(`/api/rooms/${roomId}`)
+    //     .then(({ data }) => {
+    //       const {
+    //         price, stars, serviceFee, cleaningFee, bookedDates,
+    //       } = data;
+    //       this.setState({
+    //         price, stars, serviceFee, cleaningFee, bookedDates,
+    //       });
+    //     });
+    // };
   }
 
   componentDidMount() {
-    this.getData();
+    const { getData, roomId } = this.props;
+    getData(roomId);
   }
 
   render() {
     const {
       price, stars,
       serviceFee, cleaningFee,
-      bookedDates,
-    } = this.state;
+      bookedDates, makeReservation, adults, children, infants, roomId,
+    } = this.props;
 
     const {
       showCheckInCalendar, showCheckOutCalendar, checkInDate, checkOutDate,
     } = this.props;
+
+    const payload = {
+      startDate: checkInDate,
+      endDate: checkOutDate,
+      guests: {
+        adults,
+        children,
+        infants,
+      },
+    };
+    console.log(payload);
 
     return (
       <div id="booking-bar">
@@ -105,7 +118,7 @@ class Booking extends React.Component {
             : null
         }
         <div>
-          <input type="submit" onClick={this.makeReservation} value="Book" id="btn-book" />
+          <input type="submit" onClick={() => makeReservation(roomId, payload)} value="Book" id="btn-book" />
         </div>
       </div>
     );

@@ -8,6 +8,11 @@ import infants from './changeInfantsReducer';
 import checkInDate from './selectCheckInReducer';
 import checkOutDate from './selectCheckOutReducer';
 import currentDate from './loadCalendarReducer';
+import price from './priceReducer';
+import stars from './starsReducer';
+import cleaningFee from './cleaningFeeReducer';
+import bookedDates from './bookedDatesReducer';
+import serviceFee from './serviceFeeReducer';
 
 const rootReducer = combineReducers({
   checkIn,
@@ -19,6 +24,11 @@ const rootReducer = combineReducers({
   checkInDate,
   checkOutDate,
   currentDate,
+  price,
+  stars,
+  cleaningFee,
+  bookedDates,
+  serviceFee,
 });
 
 export default rootReducer;
