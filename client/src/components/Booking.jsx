@@ -60,60 +60,22 @@ class Booking extends React.Component {
           });
         });
     };
-
-    // this.handleCalendarClick = this.handleCalendarClick.bind(this);
-    this.getNumberOfGuests = this.getNumberOfGuests.bind(this);
   }
 
   componentDidMount() {
     this.getData();
   }
 
-  getNumberOfGuests(guestObj) {
-    const { adults, children, infants } = guestObj;
-    this.setState({
-      adults,
-      children,
-      infants,
-    });
-  }
-
-  // handleCalendarClick(date) {
-  //   const { showCheckInCalendar, showCheckOutCalendar, checkInDate } = this.state;
-  //   if (showCheckInCalendar) {
-  //     this.setState({
-  //       checkInDate: date,
-  //       showCheckInCalendar: !showCheckInCalendar,
-  //       showCheckOutCalendar: !showCheckOutCalendar,
-  //     });
-  //     return;
-  //   }
-  //   if (showCheckOutCalendar) {
-  //     if (checkInDate.valueOf() > date.valueOf()) {
-  //       this.setState({
-  //         checkOutDate: checkInDate,
-  //         checkInDate: date,
-  //         showCheckInCalendar: false,
-  //         showCheckOutCalendar: false,
-  //       });
-  //     } else {
-  //       this.setState({
-  //         checkOutDate: date,
-  //         showCheckInCalendar: false,
-  //         showCheckOutCalendar: false,
-  //       });
-  //     }
-  //   }
-  // }
-
   render() {
     const {
-      price, stars, checkInDate,
-      checkOutDate, serviceFee, cleaningFee,
+      price, stars,
+      serviceFee, cleaningFee,
       bookedDates,
     } = this.state;
 
-    const { showCheckInCalendar, showCheckOutCalendar } = this.props;
+    const {
+      showCheckInCalendar, showCheckOutCalendar, checkInDate, checkOutDate,
+    } = this.props;
 
     return (
       <div id="booking-bar">
@@ -124,17 +86,7 @@ class Booking extends React.Component {
         <DatePickerContainer />
         {
           showCheckInCalendar || showCheckOutCalendar
-            ? (
-              <CalendarContainer bookedDates={bookedDates} />
-            // <Calendar
-            //   handleCalendarClick={this.handleCalendarClick}
-            //   bookedDates={bookedDates}
-            //   checkInDate={checkInDate}
-            //   checkOutDate={checkOutDate}
-            //   showCheckInCalendar={showCheckInCalendar}
-            //   showCheckOutCalendar={showCheckOutCalendar}
-            // />
-            )
+            ? <CalendarContainer bookedDates={bookedDates} />
             : null
         }
         <span className="element-headers">Guests</span>
@@ -160,10 +112,17 @@ class Booking extends React.Component {
   }
 }
 
+Booking.defaultProps = {
+  checkInDate: null,
+  checkOutDate: null,
+};
+
 Booking.propTypes = {
   roomId: PropTypes.string.isRequired,
   showCheckInCalendar: PropTypes.bool.isRequired,
   showCheckOutCalendar: PropTypes.bool.isRequired,
+  checkInDate: PropTypes.instanceOf(Date),
+  checkOutDate: PropTypes.instanceOf(Date),
 };
 
 export default Booking;

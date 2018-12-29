@@ -20,11 +20,16 @@ const DatePicker = ({
   );
 };
 
+DatePicker.defaultProps = {
+  checkInDate: null,
+  checkOutDate: null,
+};
+
 DatePicker.propTypes = {
   handleCheckInClick: PropTypes.func.isRequired,
   handleCheckOutClick: PropTypes.func.isRequired,
-  checkInDate: PropTypes.string.isRequired,
-  checkOutDate: PropTypes.string.isRequired,
+  checkInDate: PropTypes.instanceOf(Date),
+  checkOutDate: PropTypes.instanceOf(Date),
   showCheckInCalendar: PropTypes.bool.isRequired,
   showCheckOutCalendar: PropTypes.bool.isRequired,
 };

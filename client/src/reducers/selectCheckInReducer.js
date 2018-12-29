@@ -1,4 +1,4 @@
-const selectCheckInDate = (state = 'Check In', action) => {
+const selectCheckInDate = (state = null, action) => {
   switch (action.type) {
     case 'SELECT_CHECK_IN':
       return action.checkIn;

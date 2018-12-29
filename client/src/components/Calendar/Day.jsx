@@ -15,7 +15,6 @@ const Day = ({
       const startDate = new Date(dates.startDate).valueOf();
       const endDate = new Date(dates.endDate).valueOf();
       if (checkDate.valueOf() >= startDate && checkDate.valueOf() <= endDate) {
-        // not valid
         return false;
       }
     }
@@ -63,8 +62,8 @@ const Day = ({
 
 Day.defaultProps = {
   date: null,
-  checkInDate: '',
-  checkOutDate: '',
+  checkInDate: null,
+  checkOutDate: null,
   bookedDates: [],
   handleDayClick: null,
   showCheckInCalendar: false,
@@ -75,8 +74,8 @@ Day.propTypes = {
   date: PropTypes.instanceOf(Date),
   handleDayClick: PropTypes.func,
   bookedDates: PropTypes.instanceOf(Array),
-  checkInDate: PropTypes.string,
-  checkOutDate: PropTypes.string,
+  checkInDate: PropTypes.instanceOf(Date),
+  checkOutDate: PropTypes.instanceOf(Date),
   showCheckInCalendar: PropTypes.bool,
   showCheckOutCalendar: PropTypes.bool,
 };
