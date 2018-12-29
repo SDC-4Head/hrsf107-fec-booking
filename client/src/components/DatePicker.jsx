@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { transformDate } from './utilities/utils';
 
-// NEED TO ADD THE VALUE COMPONENT TO THESE INPUTS
-
 const DatePicker = ({
   handleCheckInClick, handleCheckOutClick,
   showCheckInCalendar, showCheckOutCalendar,

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const calculateNumberOfNights = (checkInDate, checkOutDate) => {
-  const startDate = new Date(checkInDate);
-  const endDate = new Date(checkOutDate);
+  const startDate = checkInDate;
+  const endDate = checkOutDate;
   const duration = endDate - startDate;
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   return duration / MILLISECONDS_PER_DAY;
