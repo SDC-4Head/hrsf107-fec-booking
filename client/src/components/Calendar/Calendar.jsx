@@ -9,24 +9,11 @@ class Calendar extends React.Component {
   constructor(props) {
     super(props);
 
-    const { checkInDate, checkOutDate } = this.props;
     this.state = {
       currentMonth: '',
-      checkInDate,
-      checkOutDate,
       currentYear: null,
-      monthState: [
-      // Sun    M     T     W     Th   F     Sat
-        [null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null],
-      ],
     };
 
-    this.handleDayClick = this.handleDayClick.bind(this);
     this.handlePreviousMonthClick = this.handlePreviousMonthClick.bind(this);
     this.handleNextMonthClick = this.handleNextMonthClick.bind(this);
   }
@@ -36,25 +23,25 @@ class Calendar extends React.Component {
     loadCalendar(new Date());
   }
 
-  handleDayClick(e) {
-    const { handleCalendarClick, showCheckInCalendar, showCheckOutCalendar } = this.props;
-    const { currentMonth, currentYear } = this.props;
-    const day = e.target.value;
-    const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
-    if (showCheckInCalendar) {
-      this.setState({
-        checkInDate: date,
-      }, () => {
-        handleCalendarClick(date);
-      });
-    } else if (showCheckOutCalendar) {
-      this.setState({
-        checkOutDate: date,
-      }, () => {
-        handleCalendarClick(date);
-      });
-    }
-  }
+  // handleDayClick(e) {
+  //   const { handleCalendarClick, showCheckInCalendar, showCheckOutCalendar } = this.props;
+  //   const { currentMonth, currentYear } = this.props;
+  //   const day = e.target.value;
+  //   const date = new Date(`${currentMonth} ${day}, ${currentYear}`);
+  //   if (showCheckInCalendar) {
+  //     this.setState({
+  //       checkInDate: date,
+  //     }, () => {
+  //       handleCalendarClick(date);
+  //     });
+  //   } else if (showCheckOutCalendar) {
+  //     this.setState({
+  //       checkOutDate: date,
+  //     }, () => {
+  //       handleCalendarClick(date);
+  //     });
+  //   }
+  // }
 
   handlePreviousMonthClick() {
     const { currentMonth, currentYear } = this.state;
@@ -96,7 +83,7 @@ class Calendar extends React.Component {
 
   render() {
     const {
-      bookedDates, monthState, currentMonth, currentYear, handleDayClick
+      monthState, currentMonth, currentYear,
     } = this.props;
 
     if (monthState) {
@@ -112,7 +99,7 @@ class Calendar extends React.Component {
                 // date={date}
                 // bookedDates={bookedDates}
                 // checkInDate={checkInDate}
-                // checkOutDate={checkOutDate} 
+                // checkOutDate={checkOutDate}
                 // />
               );
             }

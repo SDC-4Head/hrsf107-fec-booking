@@ -56,8 +56,6 @@ const generateCalendarState = (month, year) => {
   return formatCalendar(calendar);
 };
 
-console.log(generateCalendarState('March', 2019));
-
 const transformDate = (date) => {
   if (date instanceof Date) {
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
@@ -65,5 +63,12 @@ const transformDate = (date) => {
   return '';
 };
 
+const getMonthNameFromIndex = (monthIndex) => {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'];
+  return months[monthIndex];
+};
+
 module.exports.generateCalendarState = generateCalendarState;
 module.exports.transformDate = transformDate;
+module.exports.getMonthNameFromIndex = getMonthNameFromIndex;

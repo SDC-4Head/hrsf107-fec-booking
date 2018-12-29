@@ -21,8 +21,6 @@ class Booking extends React.Component {
       checkOutDate: '',
       serviceFee: 0,
       cleaningFee: 0,
-      showCheckInCalendar: false,
-      showCheckOutCalendar: false,
       bookedDates: [],
       adults: 1,
       children: 0,
@@ -127,7 +125,7 @@ class Booking extends React.Component {
         {
           showCheckInCalendar || showCheckOutCalendar
             ? (
-              <CalendarContainer />
+              <CalendarContainer bookedDates={bookedDates} />
             // <Calendar
             //   handleCalendarClick={this.handleCalendarClick}
             //   bookedDates={bookedDates}
