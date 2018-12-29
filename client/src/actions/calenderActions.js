@@ -1,4 +1,4 @@
-import { generateCalendarState, transformDate } from '../components/utilities/utils';
+import { generateCalendarState, transformDate, getMonthNameFromIndex } from '../components/utilities/utils';
 
 const toggleCheckInCalendar = bool => ({
   type: 'TOGGLE_CHECK_IN',
@@ -24,14 +24,19 @@ const getCurrentDate = (date) => {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   return {
     type: 'LOAD_CALENDAR',
-    month: months[date.getMonth()],
+    month: getMonthNameFromIndex(date.getMonth()),
     year: date.getFullYear(),
     state: generateCalendarState(months[date.getMonth()], date.getFullYear()),
   };
 };
 
+const getPreviousMonth = monthIndex => ({
+  type: 'PREVIOUS_MONTH',
+  month: getMonthNameFromIndex(monthIndex - 1),
+});
+
 export {
   toggleCheckOutCalendar, toggleCheckInCalendar,
   selectCheckInDate, selectCheckOutDate,
-  getCurrentDate,
+  getCurrentDate, getPreviousMonth,
 };
