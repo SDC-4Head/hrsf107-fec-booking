@@ -4,6 +4,8 @@ const loadCalendarReducer = (state = '', action) => {
       return { month: action.month, year: action.year, state: action.state };
     case 'PREVIOUS_MONTH':
       return { month: action.month, year: action.year, state: action.state };
+    case 'NEXT_MONTH':
+      return { month: action.month, year: action.year, state: action.state };
     default:
       return state;
   }

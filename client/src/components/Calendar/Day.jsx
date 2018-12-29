@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { transformDate } from '../utilities/utils';
 
 const Day = ({
-  handleDayClick, date, bookedDates, checkInDate, checkOutDate, showCheckInCalendar, showCheckOutCalendar,
+  handleDayClick, date,
+  bookedDates, checkInDate,
+  checkOutDate, showCheckInCalendar,
+  showCheckOutCalendar,
 }) => {
   const checkIfValidDate = (checkDate) => {
     // check if the date is between any of the bookedDates
@@ -63,14 +66,17 @@ Day.defaultProps = {
   checkInDate: '',
   checkOutDate: '',
   bookedDates: [],
+  handleDayClick: null,
 };
 
 Day.propTypes = {
   date: PropTypes.instanceOf(Date),
-  handleDayClick: PropTypes.func.isRequired,
+  handleDayClick: PropTypes.func,
   bookedDates: PropTypes.instanceOf(Array),
   checkInDate: PropTypes.string,
   checkOutDate: PropTypes.string,
+  showCheckInCalendar: PropTypes.bool.isRequired,
+  showCheckOutCalendar: PropTypes.bool.isRequired,
 };
 
 export default Day;

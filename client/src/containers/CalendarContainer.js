@@ -3,6 +3,7 @@ import Calendar from '../components/Calendar/Calendar';
 import {
   selectCheckInDate, selectCheckOutDate,
   getCurrentDate, getPreviousMonth,
+  getNextMonth,
 } from '../actions/calenderActions';
 
 const isCheckInSmaller = (checkInDate, selectedDate) => {
@@ -43,6 +44,9 @@ const mapDispatchToProps = dispatch => ({
   },
   handlePreviousCalendar: (monthIndex, currentYear) => {
     dispatch(getPreviousMonth(monthIndex, currentYear));
+  },
+  handleNextMonth: (monthIndex, currentYear) => {
+    dispatch(getNextMonth(monthIndex, currentYear));
   },
 });
 
