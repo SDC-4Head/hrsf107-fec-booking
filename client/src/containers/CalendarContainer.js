@@ -26,7 +26,6 @@ const mapStateToProps = state => ({
   showCheckOutCalendar: state.checkOut,
 });
 
-// I need a function here that loads the current Month and current Date
 const mapDispatchToProps = dispatch => ({
   loadCalendar: (date) => {
     dispatch(getCurrentDate(date));
