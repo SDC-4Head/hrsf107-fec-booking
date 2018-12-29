@@ -69,6 +69,13 @@ const getMonthNameFromIndex = (monthIndex) => {
   return months[monthIndex];
 };
 
+const getMonthIndexFromName = (monthName) => {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'];
+  return months.indexOf(monthName);
+};
+
 module.exports.generateCalendarState = generateCalendarState;
 module.exports.transformDate = transformDate;
 module.exports.getMonthNameFromIndex = getMonthNameFromIndex;
+module.exports.getMonthIndexFromName = getMonthIndexFromName;

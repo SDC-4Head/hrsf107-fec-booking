@@ -1,4 +1,4 @@
-import { generateCalendarState, transformDate, getMonthNameFromIndex } from '../components/utilities/utils';
+import { generateCalendarState, transformDate, getMonthNameFromIndex, getMonthIndexFromName } from '../components/utilities/utils';
 
 const toggleCheckInCalendar = bool => ({
   type: 'TOGGLE_CHECK_IN',
@@ -30,10 +30,25 @@ const getCurrentDate = (date) => {
   };
 };
 
-const getPreviousMonth = monthIndex => ({
-  type: 'PREVIOUS_MONTH',
-  month: getMonthNameFromIndex(monthIndex - 1),
-});
+const getPreviousMonth = (monthName, currentYear) => {
+  if (getMonthIndexFromName(monthName) - 1 < 0) {
+    const previousYear = currentYear - 1;
+    return {
+      type: 'PREVIOUS_MONTH',
+      month: 'December',
+      year: previousYear,
+      /* eslint-disable-next-line */
+      state: generateCalendarState('December', previousYear),
+    };
+  }
+  return {
+    type: 'PREVIOUS_MONTH',
+    month: getMonthNameFromIndex(getMonthIndexFromName(monthName) - 1),
+    year: currentYear,
+    /* eslint-disable-next-line */
+    state: generateCalendarState(getMonthNameFromIndex(getMonthIndexFromName(monthName) - 1), currentYear),
+  };
+};
 
 export {
   toggleCheckOutCalendar, toggleCheckInCalendar,

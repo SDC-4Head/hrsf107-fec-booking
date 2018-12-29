@@ -83,7 +83,7 @@ class Calendar extends React.Component {
 
   render() {
     const {
-      monthState, currentMonth, currentYear,
+      monthState, currentMonth, currentYear, handlePreviousCalendar,
     } = this.props;
 
     if (monthState) {
@@ -111,7 +111,7 @@ class Calendar extends React.Component {
       return (
         <div>
           <div id="calendar-banner">
-            <button type="button" onClick={this.handlePreviousMonthClick}><i className="fas fa-long-arrow-alt-left left" /></button>
+            <button type="button" onClick={() => handlePreviousCalendar(currentMonth, currentYear)}><i className="fas fa-long-arrow-alt-left left" /></button>
             <span id="month">{currentMonth}</span>
             <button type="button" onClick={this.handleNextMonthClick}><i className="fas fa-long-arrow-alt-right right" /></button>
           </div>
