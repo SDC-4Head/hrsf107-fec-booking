@@ -8,7 +8,7 @@ import {
 } from '../actions/calenderActions';
 
 const isCheckInSmaller = (checkInDate, selectedDate) => {
-  const checkInDateEpoch = new Date(checkInDate).valueOf();
+  const checkInDateEpoch = checkInDate.valueOf();
   const checkOutDateEpoch = selectedDate.valueOf();
 
   if (checkInDateEpoch > checkOutDateEpoch) {
