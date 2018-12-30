@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axios from 'axios';
 import {
   setPrice, setStars, setCleaningFee, setBookedDates, setServiceFee,
