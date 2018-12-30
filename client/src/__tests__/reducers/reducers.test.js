@@ -96,7 +96,7 @@ describe('Describes Reducers', () => {
 
   it('should generate a state with the hovered date as the value', () => {
     const newDate = new Date();
-    expect(reducer({ hoverDate: null }, 
+    expect(reducer({ hoverDate: null },
       calendarActions.hoverOverCheckOutDate(newDate)).hoverDate).toBe(newDate);
   });
 });
