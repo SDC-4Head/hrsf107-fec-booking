@@ -5,7 +5,7 @@ import {
 
 const getData = roomID => (
   (dispatch) => {
-    axios.get(`/api/rooms/${roomID}`)
+    return axios.get(`/api/rooms/${roomID}`)
       .then(({ data }) => {
         dispatch(setPrice(data.price));
         dispatch(setStars(data.stars));
@@ -19,7 +19,7 @@ const getData = roomID => (
 
 const reserveDate = (roomID, payload) => (
   (dispatch) => {
-    axios.patch(`/api/rooms/${roomID}`, payload)
+    return axios.patch(`/api/rooms/${roomID}`, payload)
       .then(() => {
         /* eslint-disable-next-line */
         window.alert('Booked');
