@@ -99,4 +99,16 @@ describe('Describes Reducers', () => {
     expect(reducer({ hoverDate: null },
       calendarActions.hoverOverCheckOutDate(newDate)).hoverDate).toBe(newDate);
   });
+
+  it('should generate a state with the previous month and previous year if January', () => {
+    const calendarStateDecember2017 = generateCalendarState('December', 2017);
+    expect(reducer({ currentDate: null },
+      calendarActions.getPreviousMonth('January', 2018)).currentDate.state).toEqual(calendarStateDecember2017);
+  });
+
+  it('should generate a state with the next month and next year if December', () => {
+    const calendarStateJanuary2018 = generateCalendarState('January', 2018);
+    expect(reducer({ currentDate: null },
+      calendarActions.getNextMonth('December', 2017)).currentDate.state).toEqual(calendarStateJanuary2018);
+  });
 });
