@@ -6,6 +6,8 @@ import GuestSelectorContainer from '../containers/GuestSelectorContainer';
 import Rating from './Rating';
 import Total from './Total';
 
+import styles from '../../dist/styles/styles.css';
+
 const Booking = (props) => {
   const {
     stars, getData, roomId, price, bookedDates, checkInDate,

@@ -25,7 +25,7 @@ const Calendar = (props) => {
     </tr>
   ));
   return (
-    <div>
+    <div id="calendar-container">
       <div id="calendar-banner">
         <button type="button" onClick={() => handlePreviousCalendar(currentMonth, currentYear)}><i className="fas fa-long-arrow-alt-left left" /></button>
         <span id="month">{currentMonth}</span>
