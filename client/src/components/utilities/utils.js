@@ -13,10 +13,10 @@ const getNumberOfDaysInMonth = (month, year) => {
   const nextMonthIndex = initialMonth.getMonth() + 1;
   const nextMonth = new Date(year, nextMonthIndex);
   const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24;
-  if (month === 'March') {
-    return Math.floor((nextMonth - initialMonth) / MILLISECONDS_IN_DAY) + 1;
-  }
-  return Math.floor((nextMonth - initialMonth) / MILLISECONDS_IN_DAY);
+  // if (month === 'March') {
+  //   return Math.floor((nextMonth - initialMonth) / MILLISECONDS_IN_DAY) + 1;
+  // }
+  return Math.ceil((nextMonth - initialMonth) / MILLISECONDS_IN_DAY);
 };
 
 const padCalendar = (firstDayInMonth, lastDayInMonth, calendar) => {
