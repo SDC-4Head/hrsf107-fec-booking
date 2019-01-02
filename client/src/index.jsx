@@ -8,7 +8,7 @@ import App from './components/App';
 /* eslint-disable-next-line */
 import styles from '../dist/styles/styles.css';
 
-const container = document.getElementById('app');
+const container = document.getElementById('booking');
 
 ReactDOM.render(
   <Provider store={store}>
