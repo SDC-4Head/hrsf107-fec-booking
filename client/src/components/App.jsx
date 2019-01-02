@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 // import Booking from './Booking';
 import BookingContainer from '../containers/BookingContainer';
 import styles from '../../dist/styles/styles.css';
+
 const App = () => (
 
   <Route
