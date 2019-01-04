@@ -1,3 +1,4 @@
+const domain = process.env.DOMAIN || '172.17.0.2';
 const express = require('express');
 const morgan = require('morgan');
 const bodyparser = require('body-parser');
@@ -5,10 +6,10 @@ const mongoose = require('mongoose');
 const path = require('path');
 const Reservations = require('../db/models/reservations.js');
 
-mongoose.connect('mongodb://localhost/errbnb', { useNewUrlParser: true })
+mongoose.connect(`mongodb://${domain}/errbnb`, { useNewUrlParser: true })
   .then(() => {
     /* eslint-disable-next-line */
-    console.log('Connected to Dataase');
+    console.log('Connected to Database on: ', domain);
   });
 
 const app = express();

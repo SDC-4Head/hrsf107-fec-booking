@@ -1,3 +1,4 @@
+const domain = process.env.DOMAIN || '172.17.0.2';
 const mongoose = require('mongoose');
 const Reservation = require('../models/reservations.js');
 
@@ -75,11 +76,11 @@ const seedDB = (data) => {
       console.log('Database Cleared');
       // Add everything!
       Reservation.insertMany(data)
-        .then(() => console.log('Inserted Seed Data'));
+        .then(() => process.exit());
     }
   });
 };
-mongoose.connect('mongodb://localhost/errbnb', { useNewUrlParser: true });
+mongoose.connect(`mongodb://${domain}/errbnb`, { useNewUrlParser: true });
 const data = generateData(100);
 seedDB(data);
 

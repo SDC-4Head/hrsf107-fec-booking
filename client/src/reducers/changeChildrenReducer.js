@@ -1,7 +1,7 @@
 const changeChildrenReducer = (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT_CHILDREN':
-      return action.quantity;
+      return action.quantity > 2 ? 2 : action.quantity;
     case 'DECREMENT_CHILDREN':
       return action.quantity < 0 ? 0 : action.quantity;
     default:

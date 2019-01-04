@@ -8,9 +8,9 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "seed": "node ./db/utils/seedDB.js & exit",
+    "seed": "node ./db/utils/seedDB.js",
     "react-dev": "webpack -w -d",
-    "start": "nodemon ./server/server.js",
+    "start": "node ./server/server.js",
     "test": "jest"
   },
   "dependencies": {
@@ -20,7 +20,7 @@
     "mongoose": "^5.4.0",
     "morgan": "^1.9.1",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
+    "react": "^16.7.0", 
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
