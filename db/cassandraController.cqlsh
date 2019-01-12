@@ -1,0 +1,6 @@
+USE test;
+
+COPY testtable (id, price, stars, weeklyViewCount, serviceFee, weeklyDiscountPercent, isRareFind, cleaningFee) FROM './calendar10.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+
+
+
