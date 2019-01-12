@@ -8,7 +8,6 @@ let fs = require('graceful-fs');
 //   keyspace: 'test',
 // });
 
-
 const generateRandomNumber = (min, max, type = 'int') => {
   if (type === 'int') {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -65,7 +64,6 @@ const writeFile = (stream, rowsRecorded, j) => {
     // bookedDates: generateThreeRandomDatesPerYear(2019),
   }];
   id += 1;
-
 
   const shouldContinue = stream.write(`${ConvertToCSV(entry)}`);
   if (shouldContinue) {
