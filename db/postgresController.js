@@ -31,14 +31,3 @@ const saveData = () => {
 saveData();
 
 pool.end();
-
-
-
-
-// carriage return are typically found in line endings, windows handle line endings differently,
-// somebody manually inserted a character return
-
-// The ascii standards define the hex value OD as a carriage return and
-
-// the server proccess using "copy" did not have permissions to read a file, create a directory to specifically
-// house the data, chmod to allow user to write the file, chown to allow postgres to read the data.

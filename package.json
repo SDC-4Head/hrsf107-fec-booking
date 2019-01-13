@@ -13,7 +13,7 @@
     "start": "node ./server/server.js",
     "test": "jest",
     "saveCassandraSchema": "cqlsh -f ./db/schemaCassandra.cql",
-    "bigseed": "psql -U postgres -d booking -a -f ./db/postgresSchema.sql && node ./db/utils/seedDB.js && node ./db/postgresController.js"
+    "bigseed": "npm run saveCassandraSchema && psql -U postgres -d booking -a -f ./db/postgresSchema.sql && node ./db/utils/seedDB.js && node ./db/postgresController.js && sh ./db/cassandraShellSeed.sh"
   },
   "dependencies": {
     "axios": "^0.18.0",

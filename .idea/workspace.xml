@@ -2,90 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7e69c18-a47c-475d-a4bc-df257b0cde39" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/180ad626-866b-475d-9634-6fea3a2ee2db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/180ad626-866b-475d-9634-6fea3a2ee2db.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hrsf107-fec-booking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hrsf107-fec-booking.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.nvmrc" beforeDir="false" afterPath="$PROJECT_DIR$/.nvmrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/STYLE-GUIDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/STYLE-GUIDE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blob/master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/blob/master/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar10.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar6.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar7.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar8.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendar9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/dist/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/bookingActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/bookingActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/calenderActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/calenderActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/guestActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/guestActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/serverActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/serverActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Booking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Booking.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Calendar/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Calendar/Calendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Calendar/Day.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Calendar/Day.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DatePicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DatePicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GuestBar/GuestOptionEntry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GuestBar/GuestOptionEntry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GuestBar/GuestOptionsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GuestBar/GuestOptionsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GuestBar/GuestSelector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GuestBar/GuestSelector.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Price.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Price.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Rating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Rating.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Total.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Total.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/utilities/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/utilities/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/BookingContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/BookingContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/CalendarContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/CalendarContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/DatePickerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/DatePickerContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/GuestSelectorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/GuestSelectorContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/bookedDatesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/bookedDatesReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/changeAdultReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/changeAdultReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/changeChildrenReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/changeChildrenReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/changeInfantsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/changeInfantsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/checkInCalendarReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/checkInCalendarReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/checkOutCalendarReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/checkOutCalendarReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/cleaningFeeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/cleaningFeeReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/guestOptionsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/guestOptionsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/hoverDateReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/hoverDateReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/loadCalendarReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/loadCalendarReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/priceReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/priceReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/selectCheckInReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/selectCheckInReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/selectCheckOutReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/selectCheckOutReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/serviceFeeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/serviceFeeReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/starsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/starsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/cassandraController.cqlsh" beforeDir="false" afterPath="$PROJECT_DIR$/db/cassandraController.cqlsh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/cassandraShellSeed.sh" beforeDir="false" afterPath="$PROJECT_DIR$/db/cassandraShellSeed.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/models/reservations.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/reservations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/postgresController.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/postgresController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/postgresSchema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/postgresSchema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schemaCassandra.cql" beforeDir="false" afterPath="$PROJECT_DIR$/db/schemaCassandra.cql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/utils/seedDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/utils/seedDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/client/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -119,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/utils/seedDB.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
+            <state relative-caret-position="536">
               <caret line="86" selection-start-line="86" selection-end-line="86" />
             </state>
           </provider>
@@ -130,6 +49,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/models/reservations.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -169,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/postgresController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="480">
+              <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -187,8 +115,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+            <state relative-caret-position="596">
+              <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -237,8 +165,8 @@
         <option value="$PROJECT_DIR$/db/cassandraController.cqlsh" />
         <option value="$PROJECT_DIR$/db/pgsqlShellSeed.pgsql" />
         <option value="$PROJECT_DIR$/db/postgresSchema.sql" />
-        <option value="$PROJECT_DIR$/db/postgresController.js" />
         <option value="$PROJECT_DIR$/db/utils/seedDB.js" />
+        <option value="$PROJECT_DIR$/db/postgresController.js" />
         <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
@@ -427,12 +355,12 @@
       <workItem from="1547316929282" duration="892000" />
       <workItem from="1547318083672" duration="746000" />
       <workItem from="1547319463693" duration="1658000" />
-      <workItem from="1547322343196" duration="10239000" />
+      <workItem from="1547322343196" duration="10928000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74839000" />
+    <option name="totallyTimeSpent" value="75528000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="all">
@@ -444,7 +372,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.60655737" visible="true" weight="0.26251528" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.60655737" visible="true" weight="0.26251528" />
       <window_info id="Structure" order="1" sideWeight="0.5005931" side_tool="true" weight="0.25863236" />
       <window_info id="npm" order="2" sideWeight="0.39344263" side_tool="true" weight="0.32194707" />
       <window_info id="Project Explorer" order="3" weight="0.3296328" />
@@ -460,7 +388,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" weight="0.32858837" />
       <window_info anchor="bottom" id="TODO" order="9" sideWeight="0.49964565" weight="0.5208556" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49681076" visible="true" weight="0.34489796" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49681076" visible="true" weight="0.3132653" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5024805" side_tool="true" weight="0.32918552" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49964565" weight="0.32762313" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32977462" />
@@ -606,13 +534,6 @@
       <provider selected="true" editor-type-id="LargeFileEditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/import_test_testtable.err.20190111_144111" />
-    <entry file="file://$PROJECT_DIR$/db/models/reservations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calendar1.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="1320">
@@ -626,15 +547,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blob/master/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -653,6 +565,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/schemaCassandra.cql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/cassandraController.cqlsh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -667,10 +586,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schemaCassandra.cql">
+    <entry file="file://$PROJECT_DIR$/db/utils/seedDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="16" />
+        <state relative-caret-position="536">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/models/reservations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/postgresController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -681,24 +623,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/postgresController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/utils/seedDB.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        <state relative-caret-position="596">
+          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
         </state>
       </provider>
     </entry>
