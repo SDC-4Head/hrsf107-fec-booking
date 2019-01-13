@@ -1,12 +1,12 @@
-DROP DATABASE IF EXISTS booking;
+--DROP DATABASE IF EXISTS booking;
 
-CREATE DATABASE booking;
+--CREATE DATABASE booking;
 
-DROP SCHEMA IF EXISTS booking;
+CREATE SCHEMA IF NOT EXISTS booking;
 
-CREATE SCHEMA booking;
+DROP TABLE booking.booking;
 
-CREATE TABLE booking
+CREATE TABLE booking.booking
 (
   id                    INT PRIMARY KEY,
   stars                 DOUBLE PRECISION,
@@ -17,3 +17,5 @@ CREATE TABLE booking
   isRareFind            BOOLEAN,
   cleaningFee           INT
 );
+
+-- DELETE FROM booking.booking.booking where true;

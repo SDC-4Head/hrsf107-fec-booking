@@ -32,7 +32,7 @@ function ConvertToCSV(objArray) {
       line += array[i][index];
     }
 
-    str += `${line}\r\n`;
+    str += `${line}\n`;
   }
   return str;
 }
@@ -76,7 +76,7 @@ const writeFile = (stream, rowsRecorded, j) => {
 };
 
 for (let j = 1; j <= 10; j += 1) {
-  const calendarFile = fs.createWriteStream(`./calendar${j}.csv`);
+  const calendarFile = fs.createWriteStream(`/data_intake/calendar${j}.csv`);
   calendarFile.write(columns);
   writeFile(calendarFile, 0, j);
 }
