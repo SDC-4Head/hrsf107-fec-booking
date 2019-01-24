@@ -5,7 +5,7 @@ import {
 
 const getData = roomID => (
   (dispatch) => {
-    axios.get(`/api/rooms/${roomID}`)
+    axios.get((`/api/rooms/${roomID}`), { headers: { 'Access-Control-Allow-Origin': 'https://s3-us-west-1.amazonaws.com/sdc-calendar/bundle.js' } })
       .then(({ data }) => {
         console.log('this is data', data);
         dispatch(setPrice(data.hotelObject[0].price));
