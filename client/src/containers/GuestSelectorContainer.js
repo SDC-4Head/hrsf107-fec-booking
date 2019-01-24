@@ -4,6 +4,7 @@ import {
   incrementAdults, decrementAdults,
   incrementChildren, decrementChildren,
   incrementInfants, decrementInfants,
+  toggleGuestOptions,
 } from '../actions/guestActions';
 
 const mapStateToProps = state => ({
@@ -14,6 +15,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  handleGuestBarClick: (displayGuestOptions) => {
+    dispatch(toggleGuestOptions(displayGuestOptions));
+  },
   handleAddClick: (numberOfGuests, guestType) => {
     let action;
     if (guestType === 'adults') {

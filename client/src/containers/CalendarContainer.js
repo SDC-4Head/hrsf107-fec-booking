@@ -11,7 +11,10 @@ const isCheckInSmaller = (checkInDate, selectedDate) => {
   const checkInDateEpoch = checkInDate.valueOf();
   const checkOutDateEpoch = selectedDate.valueOf();
 
-  return checkInDateEpoch <= checkOutDateEpoch;
+  if (checkInDateEpoch > checkOutDateEpoch) {
+    return false;
+  }
+  return true;
 };
 
 const mapStateToProps = state => ({
