@@ -51,7 +51,6 @@ const writeFileCalender = (stream, rowsRecorded, j) => {
     isRareFind: generateRandomBoolean(),
     cleaningFee: generateRandomNumber(50, 75, 'int'),
   }];
-  calenderId += 1;
 
   const shouldContinue = stream.write(`${ConvertToCSV(calenderEntry)}`);
   if (shouldContinue) {

@@ -17,7 +17,7 @@ const saveDataHotel = async () => {
   for (let i = 1; i <= 10; i++) {
     const before = Date.now();
     const file2 = `/data_intake/hotel${i}.csv`;
-    await pool.query(`COPY booking.hotels (bookingId, hotelFK, startDate, endDate) FROM \'${file2}\' DELIMITERS ',' CSV HEADER;`, (err) => {
+    await pool.query(`COPY booking.hotels (hotelFK, startDate, endDate) FROM \'${file2}\' DELIMITERS ',' CSV HEADER;`, (err) => {
       const after = Date.now();
       if (err) {
         console.log('error', err);
