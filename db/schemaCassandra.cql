@@ -1,7 +1,7 @@
 DROP KEYSPACE IF EXISTS test;
 
 CREATE KEYSPACE test
-  WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 10};
+  WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};
 
 CREATE TABLE test.testtable
 (
@@ -14,3 +14,4 @@ CREATE TABLE test.testtable
   isRareFind            BOOLEAN,
   cleaningFee           INT
 );
+

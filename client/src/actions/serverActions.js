@@ -7,12 +7,13 @@ const getData = roomID => (
   (dispatch) => {
     axios.get(`/api/rooms/${roomID}`)
       .then(({ data }) => {
-        dispatch(setPrice(data.price));
-        dispatch(setStars(data.stars));
-        dispatch(setCleaningFee(data.cleaningFee));
-        dispatch(setBookedDates(data.bookedDates));
-        dispatch(setPrice(data.price));
-        dispatch(setServiceFee(data.serviceFee));
+        console.log('this is data', data);
+        dispatch(setPrice(data.hotelObject[0].price));
+        dispatch(setStars(data.hotelObject[0].stars));
+        dispatch(setCleaningFee(data.hotelObject[0].cleaningfee));
+        dispatch(setBookedDates(data.calendarObject[0].bookedDates));
+        dispatch(setPrice(data.hotelObject[0].price));
+        dispatch(setServiceFee(data.hotelObject[0].servicefee));
       });
   }
 );
