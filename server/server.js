@@ -25,8 +25,16 @@ app.use(morgan('tiny'));
 app.use(bodyparser.json());
 app.use(express.static('client/dist'));
 
+// Add headers
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5656');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
+
 app.get('/api/rooms/:id', (req, res) => {
-  console.log('get fires');
   const { id } = req.params;
 
   let hotelObject;
@@ -36,13 +44,13 @@ app.get('/api/rooms/:id', (req, res) => {
   FROM booking.booking 
   WHERE booking.booking.id = ${id};`;
   const queryCalender = `SELECT json_agg(bookedDates) 
-  AS "bookedDates" 
-  FROM (SELECT startdate 
-  AS "startDate", 
-  enddate AS "endDate" 
-  FROM booking.hotels 
-  WHERE booking.hotels.hotelfk = ${id}) 
-  AS bookedDates;`;
+    AS "bookedDates" 
+    FROM (SELECT startdate 
+    AS "startDate", 
+    enddate AS "endDate" 
+    FROM booking.hotels 
+    WHERE booking.hotels.hotelfk = ${id}) 
+    AS bookedDates;`;
   pool.query(queryHotel, (errHotel, hotel) => {
     if (errHotel) {
       res.status(500);
@@ -72,9 +80,11 @@ app.patch('/api/rooms/:id', (req, res) => {
   const queryParams = [id, payload.startDate, payload.endDate];
   pool.query(insertBooking, queryParams, (err, success) => {
     if (err) {
-      res.status(500).send(err);
+      res.status(500)
+        .send(err);
     } else {
-      res.status(201).send(success);
+      res.status(201)
+        .send(success);
     }
   });
 });
