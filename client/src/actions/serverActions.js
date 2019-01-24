@@ -7,6 +7,7 @@ const getData = roomID => (
   (dispatch) => {
     axios.get(`/api/rooms/${roomID}`)
       .then(({ data }) => {
+        console.log(data);
         dispatch(setPrice(data.price));
         dispatch(setStars(data.stars));
         dispatch(setCleaningFee(data.cleaningFee));

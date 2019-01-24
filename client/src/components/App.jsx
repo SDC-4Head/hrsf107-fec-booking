@@ -6,11 +6,13 @@ import BookingContainer from '../containers/BookingContainer';
 // import styles from '../../dist/styles/styles.css';
 
 const TEST = () => (
-
-  <Route
-    path="/rooms/:id"
-    render={({ match }) => <BookingContainer roomId={match.params.id} />}
-  />
+  <div>
+    {console.log(BookingContainer)}
+    <Route
+      path="/rooms/:id"
+      render={({ match }) => <BookingContainer roomId={match.params.id} />}
+    />
+  </div>
 );
 
 export default TEST;

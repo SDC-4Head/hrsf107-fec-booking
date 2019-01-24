@@ -10,7 +10,7 @@
   "scripts": {
     "seed": "node ./db/utils/seedDB.js",
     "react-dev": "webpack -w -d",
-    "start": "node ./server/server.js",
+    "start": "nodemon ./server/server.js",
     "test": "jest",
     "saveCassandraSchema": "cqlsh -f ./db/schemaCassandra.cql",
     "bigseed": "npm run saveCassandraSchema && psql -U postgres -d booking -a -f ./db/postgresSchema.sql && node ./db/utils/seedDB.js && node ./db/postgresController.js && sh ./db/cassandraShellSeed.sh"
@@ -53,6 +53,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
+    "newrelic": "^5.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2"

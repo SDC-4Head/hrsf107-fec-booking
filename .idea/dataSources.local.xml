@@ -10,5 +10,13 @@
       <user-name>cassandra</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="@localhost" uuid="e6dd50ef-3042-4139-bf02-eb2e3375b631">
+      <database-info product="Cassandra" version="3.11.3" jdbc-version="4.2" driver-name="Cassandra JDBC Driver" driver-version="1.2.9" dbms="CASSANDRA" exact-version="3.11.3" exact-driver-version="1.29">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <introspection-schemas>*:system_traces</introspection-schemas>
+    </data-source>
   </component>
 </project>

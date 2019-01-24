@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7e69c18-a47c-475d-a4bc-df257b0cde39" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/App2.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newrelic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/serverActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/serverActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/models/reservations.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/reservations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/postgresController.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/postgresController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/postgresSchema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/postgresSchema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schemaCassandra.cql" beforeDir="false" afterPath="$PROJECT_DIR$/db/schemaCassandra.cql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/utils/seedDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/utils/seedDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/client/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,23 +46,45 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="hrsf107-fec-booking" />
+    <favorites_list name="Unnamed" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/utils/seedDB.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/postgresController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="255">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+              <folding>
+                <marker date="1548175399139" expanded="true" signature="784:800" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/cassandraController.cqlsh">
+        <entry file="file://$PROJECT_DIR$/newrelic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="525">
+              <caret line="35" column="81" selection-start-line="35" selection-start-column="81" selection-end-line="35" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/postgresSchema.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/schemaCassandra.cql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -56,20 +92,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/models/reservations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="210">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blob/master/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="210">
-                <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/db/cassandraController.cqlsh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="163" selection-start-line="2" selection-start-column="163" selection-end-line="2" selection-end-column="163" />
             </state>
           </provider>
         </entry>
@@ -84,53 +117,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/server.js">
+        <entry file="file://$PROJECT_DIR$/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="15">
+              <caret line="2" selection-start-line="2" selection-end-line="3" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#27#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/postgresController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/schemaCassandra.cql">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/postgresSchema.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="19" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -139,6 +158,8 @@
       <find>seedDB</find>
       <find>id</find>
       <find>copy</find>
+      <find>entry</find>
+      <find>before</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,7 +175,6 @@
         <option value="$PROJECT_DIR$/schema.cql" />
         <option value="$APPLICATION_CONFIG_DIR$/webstorm.vmoptions" />
         <option value="$PROJECT_DIR$/.eslintrc.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/db/cassandraController.js" />
         <option value="$PROJECT_DIR$/cassandraShellSeed.sh" />
         <option value="$PROJECT_DIR$/db/schema.cql" />
@@ -164,17 +184,29 @@
         <option value="$PROJECT_DIR$/db/psqlShellSeed.psql" />
         <option value="$PROJECT_DIR$/db/cassandraController.cqlsh" />
         <option value="$PROJECT_DIR$/db/pgsqlShellSeed.pgsql" />
+        <option value="$PROJECT_DIR$/client/test.js" />
+        <option value="$PROJECT_DIR$/db/schemaCassandra.cql" />
         <option value="$PROJECT_DIR$/db/postgresSchema.sql" />
+        <option value="$PROJECT_DIR$/test.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/client/src/components/Booking.jsx" />
+        <option value="$PROJECT_DIR$/client/src/components/App2.jsx" />
+        <option value="$PROJECT_DIR$/client/src/components/App.jsx" />
+        <option value="$PROJECT_DIR$/client/src/actions/serverActions.js" />
+        <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/client/src/index.jsx" />
+        <option value="$PROJECT_DIR$/db/models/reservations.js" />
         <option value="$PROJECT_DIR$/db/utils/seedDB.js" />
         <option value="$PROJECT_DIR$/db/postgresController.js" />
-        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/newrelic.js" />
+        <option value="$PROJECT_DIR$/script.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="755" />
-    <option name="y" value="24" />
-    <option name="width" value="1213" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="122" />
+    <option name="y" value="44" />
+    <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectView">
@@ -189,17 +221,6 @@
             <path>
               <item name="hrsf107-fec-booking" type="b2602c69:ProjectViewProjectNode" />
               <item name="hrsf107-fec-booking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hrsf107-fec-booking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrsf107-fec-booking" type="462c0819:PsiDirectoryNode" />
-              <item name="blob" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hrsf107-fec-booking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrsf107-fec-booking" type="462c0819:PsiDirectoryNode" />
-              <item name="blob" type="462c0819:PsiDirectoryNode" />
-              <item name="master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hrsf107-fec-booking" type="b2602c69:ProjectViewProjectNode" />
@@ -220,12 +241,6 @@
             <path>
               <item name="hrsf107-fec-booking" type="b2602c69:ProjectViewProjectNode" />
               <item name="hrsf107-fec-booking" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hrsf107-fec-booking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hrsf107-fec-booking" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -236,6 +251,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="cassandra" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="PostgreSQL&#10;CassandraQL" />
     <property name="database.console.LAST_STATE" value="false" />
@@ -250,10 +266,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/blob/master" />
       <recent name="$PROJECT_DIR$/db" />
@@ -271,54 +291,34 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.seedDB.js">
-    <configuration name="cassandraShellSeed.sh (1)" type="BashConfigurationType" factoryName="Bash" temporary="true">
-      <module name="hrsf107-fec-booking" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="PROJECT_INTERPRETER" value="false" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/cassandraShellSeed.sh" />
-      <option name="PARAMETERS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="cassandraShellSeed.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
-      <module name="hrsf107-fec-booking" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="PROJECT_INTERPRETER" value="false" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cassandraShellSeed.sh" />
-      <option name="PARAMETERS" value="" />
+  <component name="RunManager" selected="Node.js.postgresController.js">
+    <configuration name="newrelic.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/newrelic.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="postgresController.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/db/postgresController.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="script.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/script.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <configuration name="seedDB.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/db/utils/seedDB.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="react-dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="react-dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/server.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.seedDB.js" />
         <item itemvalue="Node.js.postgresController.js" />
-        <item itemvalue="Bash.cassandraShellSeed.sh (1)" />
-        <item itemvalue="Bash.cassandraShellSeed.sh" />
-        <item itemvalue="npm.react-dev" />
+        <item itemvalue="Node.js.script.js" />
+        <item itemvalue="Node.js.newrelic.js" />
+        <item itemvalue="Node.js.seedDB.js" />
+        <item itemvalue="Node.js.server.js" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_CLASSES" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -355,12 +355,29 @@
       <workItem from="1547316929282" duration="892000" />
       <workItem from="1547318083672" duration="746000" />
       <workItem from="1547319463693" duration="1658000" />
-      <workItem from="1547322343196" duration="10928000" />
+      <workItem from="1547322343196" duration="11724000" />
+      <workItem from="1547347872822" duration="8000" />
+      <workItem from="1547524807613" duration="4990000" />
+      <workItem from="1547604264382" duration="1730000" />
+      <workItem from="1547684957641" duration="3232000" />
+      <workItem from="1547753628525" duration="262000" />
+      <workItem from="1547762927035" duration="1368000" />
+      <workItem from="1547768305991" duration="668000" />
+      <workItem from="1547836828138" duration="268000" />
+      <workItem from="1547851162395" duration="1929000" />
+      <workItem from="1547854119949" duration="2855000" />
+      <workItem from="1547921495771" duration="14461000" />
+      <workItem from="1547939911135" duration="281000" />
+      <workItem from="1547966234250" duration="3978000" />
+      <workItem from="1548119633920" duration="877000" />
+      <workItem from="1548120637821" duration="7206000" />
+      <workItem from="1548205387383" duration="3034000" />
+      <workItem from="1548289511298" duration="221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75528000" />
+    <option name="totallyTimeSpent" value="123692000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="all">
@@ -369,34 +386,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.60655737" visible="true" weight="0.26251528" />
-      <window_info id="Structure" order="1" sideWeight="0.5005931" side_tool="true" weight="0.25863236" />
-      <window_info id="npm" order="2" sideWeight="0.39344263" side_tool="true" weight="0.32194707" />
-      <window_info id="Project Explorer" order="3" weight="0.3296328" />
-      <window_info id="Job Explorer" order="4" sideWeight="0.4991274" weight="0.3347566" />
-      <window_info id="Favorites" order="5" sideWeight="0.191453" side_tool="true" weight="0.19215292" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6944444" visible="true" weight="0.2759463" />
+      <window_info id="Structure" order="1" sideWeight="0.30555555" side_tool="true" visible="true" weight="0.2759463" />
+      <window_info id="npm" order="2" sideWeight="0.50285715" side_tool="true" weight="0.33455434" />
+      <window_info id="Project Explorer" order="3" sideWeight="0.49857143" weight="0.32905984" />
+      <window_info id="Job Explorer" order="4" sideWeight="0.49714285" weight="0.33455434" />
+      <window_info id="Favorites" order="5" sideWeight="0.50285715" side_tool="true" weight="0.33455434" />
+      <window_info id="DB Browser" order="6" sideWeight="0.49857143" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32869378" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4975195" weight="0.77433157" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993576" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4884005" weight="0.40748662" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35508022" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Console" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" weight="0.32858837" />
-      <window_info anchor="bottom" id="TODO" order="9" sideWeight="0.49964565" weight="0.5208556" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49681076" visible="true" weight="0.3132653" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5024805" side_tool="true" weight="0.32918552" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49964565" weight="0.32762313" />
+      <window_info anchor="bottom" id="TODO" order="9" sideWeight="0.497558" weight="0.5208556" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.485348" visible="true" weight="0.3839572" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.514652" side_tool="true" visible="true" weight="0.3839572" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.498779" weight="0.3272727" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32977462" />
       <window_info anchor="bottom" id="TypeScript" order="14" weight="0.32977462" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="15" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="DB Execution Console" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.21121632" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.18009768" />
+      <window_info anchor="right" id="Redis Servers" order="4" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.60655737" visible="true" weight="0.32194707" />
@@ -430,47 +451,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/message12.csv" />
-    <entry file="file://$PROJECT_DIR$/message11.csv" />
-    <entry file="file://$PROJECT_DIR$/message10.csv" />
-    <entry file="file://$PROJECT_DIR$/message3.csv" />
-    <entry file="file://$PROJECT_DIR$/message20.csv" />
-    <entry file="file://$PROJECT_DIR$/message22.csv" />
-    <entry file="file://$PROJECT_DIR$/message16.csv" />
-    <entry file="file://$PROJECT_DIR$/STYLE-GUIDE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/message9.csv" />
-    <entry file="file://$PROJECT_DIR$/.nvmrc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/message8.csv" />
-    <entry file="file://$PROJECT_DIR$/message5.csv" />
-    <entry file="file://$PROJECT_DIR$/message4.csv" />
-    <entry file="file://$PROJECT_DIR$/message2.csv" />
-    <entry file="file://$PROJECT_DIR$/message6.csv" />
-    <entry file="file://$PROJECT_DIR$/message0.csv" />
-    <entry file="file://$PROJECT_DIR$/message1.csv" />
-    <entry file="file://$PROJECT_DIR$/message7.csv" />
-    <entry file="file://$PROJECT_DIR$/client/src/actions/bookingActions.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/guestActions.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/actions/calenderActions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -480,9 +460,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Calendar/Day.jsx">
+    <entry file="file://$PROJECT_DIR$/client/src/components/utilities/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-294">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/starsReducer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/changeChildrenReducer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/guestOptionsReducer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/GuestBar/GuestOptionEntry.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -490,6 +488,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/DatePicker.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Rating.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -507,75 +514,264 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/utils/message0.csv" />
-    <entry file="file://$PROJECT_DIR$/db/calendar5.csv" />
-    <entry file="file://$PROJECT_DIR$/db/calendar6.csv" />
-    <entry file="file://$PROJECT_DIR$/db/calendar4.csv" />
-    <entry file="file://$PROJECT_DIR$/db/calendar2.csv" />
-    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
+    <entry file="file://$PROJECT_DIR$/client/src/containers/GuestSelectorContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="23" />
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/calendar8.csv" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/11.4.0/core-modules/readline.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="450" column="11" selection-start-line="450" selection-start-column="11" selection-end-line="450" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/calendar3.csv" />
-    <entry file="file://$PROJECT_DIR$/db/import_test_testtable.err.20190111_134204" />
-    <entry file="file://$PROJECT_DIR$/db/calendar1.csv" />
-    <entry file="file://$PROJECT_DIR$/calendar2.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/import_test_testtable.err.20190111_144111" />
-    <entry file="file://$PROJECT_DIR$/calendar1.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="1320">
-          <caret line="88" column="42" lean-forward="true" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" rowLines="3" />
-      </provider>
-      <provider editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/bookedDatesReducer.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/blob/master/README.md">
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/changeAdultReducer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/loadCalendarReducer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/cleaningFeeReducer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/changeInfantsReducer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Price.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/GuestBar/GuestSelector.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/guestActions.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Calendar/Calendar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Calendar/Day.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.dockerignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/GuestBar/GuestOptionsList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/DatePickerContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/checkOutCalendarReducer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Booking.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/store/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#21#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#25#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/App2.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#25#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/BookingContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/CalendarContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/serverActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pg/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/utils/seedDB.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/dist/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="210">
-            <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
-          </first_editor>
+          <first_editor />
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/pgsqlShellSeed.pgsql">
+    <entry file="file://$PROJECT_DIR$/client/test.js" />
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="330">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/postgresController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <marker date="1548175399139" expanded="true" signature="784:800" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newrelic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="81" selection-start-line="35" selection-start-column="81" selection-end-line="35" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/postgresSchema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schemaCassandra.cql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="16" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/models/reservations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/cassandraController.cqlsh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="30">
+          <caret line="2" column="163" selection-start-line="2" selection-start-column="163" selection-end-line="2" selection-end-column="163" />
         </state>
       </provider>
     </entry>
@@ -586,47 +782,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/utils/seedDB.js">
+    <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/models/reservations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="15">
+          <caret line="2" selection-start-line="2" selection-end-line="3" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/postgresController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/postgresSchema.sql">
+    <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="19" selection-end-column="3" />
         </state>
       </provider>
     </entry>
