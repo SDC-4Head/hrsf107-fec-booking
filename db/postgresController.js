@@ -16,7 +16,7 @@ pool.on('error', (err) => {
 const saveDataHotel = async () => {
   for (let i = 1; i <= 10; i++) {
     const before = Date.now();
-    const file2 = `/data_intake/hotel${i}.csv`;
+    const file2 = `/tmp/hotel${i}.csv`;
     await pool.query(`COPY booking.hotels (hotelFK, startDate, endDate) FROM \'${file2}\' DELIMITERS ',' CSV HEADER;`, (err) => {
       const after = Date.now();
       if (err) {
@@ -34,7 +34,7 @@ saveDataHotel();
 const saveDataCalender = async () => {
   for (let i = 1; i <= 10; i++) {
     const before = Date.now();
-    const file = `/data_intake/calendar${i}.csv`;
+    const file = `/tmp/calendar${i}.csv`;
     await pool.query(`COPY booking.booking (price, stars, weeklyViewCount, serviceFee, weeklyDiscountPercent, isRareFind, cleaningFee) FROM \'${file}\' DELIMITERS ',' CSV HEADER;`, (err) => {
       const after = Date.now();
       if (err) {
